@@ -1,0 +1,22 @@
+.delete {
+
+    position: absolute !important;
+    top: 50%;
+    right: 10px;
+    z-index: 10;
+}
+
+.edit {
+
+    position: absolute !important;
+    top: 10%;
+    right: 10px;
+    z-index: 10;
+}
+
+
+.relative {
+    position: relative;
+    box-shadow: 0px 1px 11px #00000054;
+    margin-top: 20px;
+}
