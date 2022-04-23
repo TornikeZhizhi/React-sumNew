@@ -8,12 +8,14 @@ import img4 from "./imgs/4.jpg";
 import img5 from "./imgs/5.jpg";
 import img6 from "./imgs/6.jpg"; 
 import Button from '@mui/material/Button';
+// import HangTitle from "./HangTitle.js";
+
 const HangManMain = () => {
 
     const [stateRandomWord, setStateRandomWord ] = useState([])
     const [wrongAnswers,setWrongAnswers] = useState(0)
     const [game, setGame] = useState(null)
-    const [letters, setLetters] = useState([])
+    const [letters, setLetters] = useState([]) 
     const [disableGame, setDisableGame] = useState(true)
     // const [wordLength, setwordLength] = useState(0)
 
@@ -142,7 +144,7 @@ const HangManMain = () => {
     return (
     <div className="paper">
      <div className='Hangman'>
-
+        {/* <HangTitle/> */}
         <h1>Hangman</h1>
         <img src={imgs[wrongAnswers]}/>
         {game == true && <><h4 className="win_game"> "you Win GAME" </h4>  <Button onClick={newGame}  variant="contained">
