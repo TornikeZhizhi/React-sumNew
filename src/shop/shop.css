@@ -199,3 +199,16 @@
   padding-left: 12px;
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 600px) {
+
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card-container button {
+    font-size: 13px;
+    display: block;
+  }
+}

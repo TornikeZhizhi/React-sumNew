@@ -116,7 +116,7 @@ const ResourcesMain = (props) => {
             <Typography variant="h3" m={3} style={{textAlign:"center"}}>Resources</Typography>
             <Box sx={{ flexGrow: 1,borderRadius:"5px" }}>
                 <Grid container spacing={1}>
-                    <Box sx={{ width: '60%', margin:"0 auto" }}>
+                    <Box className="resource_wrapper" sx={{ width: '60%', margin:"0 auto" }}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs value={value} onChange={handleChange} 
                         aria-label="basic tabs example">

@@ -50,3 +50,21 @@
   .dark {
     background-color: #044599;
   }
+
+
+  @media screen and (max-width: 600px) {
+    .header {
+
+      padding: 0 1%; 
+      
+    }
+
+    .header li {
+      width: auto;
+      margin: 0 10px;
+    }
+
+    .header a {
+      font-size: 13px;
+    }
+  }
