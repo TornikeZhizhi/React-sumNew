@@ -5,8 +5,6 @@ import ProductDetail from "./Components/Producets/ProductDetail";
 import HeaderSwitchContext from "./ContextApi/HeaderSwitcherContext";
 import ProductsContext from "./ContextApi/ProductsContext";
 import ResourcesMain from "./Components/Resources/ResourcesMain";
-import ToastsMain from "./Components/Toasts/ToatsMain";
-import ToastsContext from "./Components/Toasts/ToastContext";
 import HangManMain from "./Components/HangMan/HangManMain";
 import Shop from "./shop/Shop";
 import ShopProvider from "./ContextApi/ShopContext";
@@ -21,16 +19,13 @@ function App() {
   return (
     <div className="App">
 
-      <ToastsContext>
+     
         <HeaderSwitchContext>
           <ProductsContext>
             <ShopProvider>
           <Header></Header>
     
           <Switch>
-            <Route path="/toast" exact>
-              <ToastsMain></ToastsMain>
-            </Route>
             <Route path="/resource" exact>
               <ResourcesMain></ResourcesMain>
             </Route>
@@ -54,7 +49,7 @@ function App() {
           </ShopProvider>
           </ProductsContext>
         </HeaderSwitchContext>
-        </ToastsContext>
+
         
     </div>
   );
