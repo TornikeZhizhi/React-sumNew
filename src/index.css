@@ -225,4 +225,7 @@ code {
   max-width: 320px;
 }
 
+.resource_wrapper {
+  width: 95% !important;
+}
 }
