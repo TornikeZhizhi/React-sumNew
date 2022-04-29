@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from 'react';
 
 
-const Dummy_WheelArray = [
-    {text:"1000₾",id:0, iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"5₾",id:1, iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"10₾",id:2, iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"100₾",id:3, iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"20₾",id:4, iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"10000₾",id:5, iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"50₾",id:6, iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"20₾",id:7, iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"1₾",id:8, iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"20₾",id:9, iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"250₾",id:10, iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"300₾",id:11, iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"50₾",id:12, iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"1500₾",id:13, iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"1700₾",id:14, iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"1000₾",id:15, iconClass:"p2p", textBlack:false,activeClass:false},
-]
 
 const WheelItem = () => {
+
+    const Dummy_WheelArray = [
+        {text:"1000₾",id:0, iconClass:"gel", textBlack:false,activeClass:false},
+        {text:"5₾",id:1, iconClass:"p2p", textBlack:false,activeClass:false},
+        {text:"10₾",id:2, iconClass:"dice", textBlack:true,activeClass:false},
+        {text:"100₾",id:3, iconClass:"p2p", textBlack:false,activeClass:false},
+        {text:"20₾",id:4, iconClass:"dice", textBlack:true,activeClass:false},
+        {text:"10000₾",id:5, iconClass:"gel", textBlack:false,activeClass:false},
+        {text:"50₾",id:6, iconClass:"dice", textBlack:true,activeClass:false},
+        {text:"20₾",id:7, iconClass:"gel", textBlack:false,activeClass:false},
+        {text:"1₾",id:8, iconClass:"dice", textBlack:true,activeClass:false},
+        {text:"20₾",id:9, iconClass:"p2p", textBlack:false,activeClass:false},
+        {text:"250₾",id:10, iconClass:"gel", textBlack:false,activeClass:false},
+        {text:"300₾",id:11, iconClass:"p2p", textBlack:false,activeClass:false},
+        {text:"50₾",id:12, iconClass:"dice", textBlack:true,activeClass:false},
+        {text:"1500₾",id:13, iconClass:"p2p", textBlack:false,activeClass:false},
+        {text:"1700₾",id:14, iconClass:"dice", textBlack:true,activeClass:false},
+        {text:"1000₾",id:15, iconClass:"p2p", textBlack:false,activeClass:false},
+    ]
+    
     const [wheelArray, setWheelArray] = useState(Dummy_WheelArray);
     const [wheelAnime, setWheelAnime] = useState(false)
     const [initialSpinRotation, setInitialSpinRotation] = useState(0)
@@ -35,9 +37,14 @@ const WheelItem = () => {
     
 
     useEffect(()=>{
-
-        
-
+        setTimeout(()=>{
+            wheelArray.map(item=>{
+                if(item.activeClass == true) {
+                    console.log("shevida");
+                     removeActiveClass()
+                }
+            })
+        },3300)
     },[wheelArray])
 
     function updateAnimationNumbers(prizeSection) {
@@ -57,8 +64,8 @@ const WheelItem = () => {
     }
 
 
-    const addActiveClass = (resetDymmyArray) => {
-        const updateArray = resetDymmyArray.map(item=>{
+    const addActiveClass = () => {
+        const updateArray = wheelArray.map(item=>{
             if(item.id == winningNumber){
                 console.log(item.id, winningNumber)
                 return {...item,activeClass:true}
@@ -78,9 +85,6 @@ const WheelItem = () => {
 
     const startHandler = () => {
      
-        removeActiveClass()
-        // removeActiveClass()
-        var resetDymmyArray = Dummy_WheelArray;
 
         winningNumber = Math.floor(Math.random() * 16 + 1)
 
@@ -98,7 +102,7 @@ const WheelItem = () => {
             setWheelAnime(false)
             setwheelOffset(SynSpinRotation % 360)
             
-            addActiveClass(resetDymmyArray)
+            addActiveClass()
            
 
         }, {once : true})
