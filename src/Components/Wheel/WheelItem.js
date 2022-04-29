@@ -1,35 +1,44 @@
 import React, { useEffect, useState } from 'react';
 
 
-const WheelArray = [
-    {text:"1000₾", iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"5₾", iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"10₾", iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"100₾", iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"20₾", iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"10000₾", iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"50₾", iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"20₾", iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"1₾", iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"20₾", iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"250₾", iconClass:"gel", textBlack:false,activeClass:false},
-    {text:"300₾", iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"50₾", iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"1500₾", iconClass:"p2p", textBlack:false,activeClass:false},
-    {text:"1700₾", iconClass:"dice", textBlack:true,activeClass:false},
-    {text:"1000₾", iconClass:"p2p", textBlack:false,activeClass:false},
+const Dummy_WheelArray = [
+    {text:"1000₾",id:0, iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"5₾",id:1, iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"10₾",id:2, iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"100₾",id:3, iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"20₾",id:4, iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"10000₾",id:5, iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"50₾",id:6, iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"20₾",id:7, iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"1₾",id:8, iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"20₾",id:9, iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"250₾",id:10, iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"300₾",id:11, iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"50₾",id:12, iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"1500₾",id:13, iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"1700₾",id:14, iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"1000₾",id:15, iconClass:"p2p", textBlack:false,activeClass:false},
 ]
 
 const WheelItem = () => {
+    const [wheelArray, setWheelArray] = useState(Dummy_WheelArray);
     const [wheelAnime, setWheelAnime] = useState(false)
     const [initialSpinRotation, setInitialSpinRotation] = useState(0)
     const [wheelOffset, setwheelOffset] = useState(0);
+    // const [winIndex, setWinIndex] = useState(null)
 
+    // console.log(wheelArray)
     let spinValue = 0;
     let sectionAmount = 16;
     let spinCount = 5;
     let winningNumber = 1;
     
+
+    useEffect(()=>{
+
+        
+
+    },[wheelArray])
 
     function updateAnimationNumbers(prizeSection) {
         spinValue = (360 * spinCount) - (prizeSection * 360 / sectionAmount) - wheelOffset;
@@ -48,9 +57,32 @@ const WheelItem = () => {
     }
 
 
-    const startHandler = () => {
+    const addActiveClass = (resetDymmyArray) => {
+        const updateArray = resetDymmyArray.map(item=>{
+            if(item.id == winningNumber){
+                console.log(item.id, winningNumber)
+                return {...item,activeClass:true}
+            }else {
+                return item
+            }
+        })
+        setWheelArray(updateArray)
+    }
 
-        // winningNumber = Math.floor(Math.random() * 16 + 1)
+    const removeActiveClass = () =>{
+        const updateArray2 = wheelArray.map(item=>{
+            return {...item,activeClass:false}
+    })
+         setWheelArray(updateArray2)
+    }
+
+    const startHandler = () => {
+     
+        removeActiveClass()
+        // removeActiveClass()
+        var resetDymmyArray = Dummy_WheelArray;
+
+        winningNumber = Math.floor(Math.random() * 16 + 1)
 
         updateAnimationNumbers(winningNumber)
         setWheelAnime(true);
@@ -65,7 +97,10 @@ const WheelItem = () => {
             SynSpinRotation = initialSpinRotation + spinValue
             setWheelAnime(false)
             setwheelOffset(SynSpinRotation % 360)
-     
+            
+            addActiveClass(resetDymmyArray)
+           
+
         }, {once : true})
 
     }
@@ -85,8 +120,8 @@ const WheelItem = () => {
                   <div className="wheel__inner">
                   
 
-                    {WheelArray.map(item=>
-                        <div className="wheel__element">
+                    {wheelArray.map(item=>
+                        <div className={`wheel__element ${item.activeClass?"active":null}`} key={item.id}>
                         <div className="wheel__element-anker">
                         <div className="wheel__element-white"></div>
                         <div className="wheel__element-inactive"></div>
