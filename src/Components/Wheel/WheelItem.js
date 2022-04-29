@@ -6,14 +6,13 @@ const WheelItem = () => {
     const [lastRotation, setLastRotation] = useState(0)
     const [initialSpinRotation, setInitialSpinRotation] = useState(0)
     const [wheelOffset, setwheelOffset] = useState(0);
-    const [spinValue, setSpinValue] = useState(0);
 
-    // let spinValue = 0;
+    let spinValue = 0;
     let sectionAmount = 16;
     let spinCount = 5;
     let initialRotationDeg = 0;
     let winningNumber = 1;
-
+    
 
     function updateAnimationNumbers(prizeSection) {
         spinValue = (360 * spinCount) - (prizeSection * 360 / sectionAmount) + initialRotationDeg - wheelOffset;
@@ -54,7 +53,7 @@ const WheelItem = () => {
 
     return (
         <div className="bonus-game">
-            bla {initialSpinRotation}
+         {initialSpinRotation}
         <div className="bonus-game__wrapper">
           <div className="bonus-game__wheel">
             <div className={`wheel ${wheelAnime ? 'anime' : null}`}>
