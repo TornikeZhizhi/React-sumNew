@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from 'react';
 
 
+const WheelArray = [
+    {text:"1000₾", iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"5₾", iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"10₾", iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"100₾", iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"20₾", iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"10000₾", iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"50₾", iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"20₾", iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"1₾", iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"20₾", iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"250₾", iconClass:"gel", textBlack:false,activeClass:false},
+    {text:"300₾", iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"50₾", iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"1500₾", iconClass:"p2p", textBlack:false,activeClass:false},
+    {text:"1700₾", iconClass:"dice", textBlack:true,activeClass:false},
+    {text:"1000₾", iconClass:"p2p", textBlack:false,activeClass:false},
+]
+
 const WheelItem = () => {
     const [wheelAnime, setWheelAnime] = useState(false)
-    const [lastRotation, setLastRotation] = useState(0)
     const [initialSpinRotation, setInitialSpinRotation] = useState(0)
     const [wheelOffset, setwheelOffset] = useState(0);
 
     let spinValue = 0;
     let sectionAmount = 16;
     let spinCount = 5;
-    let initialRotationDeg = 0;
     let winningNumber = 1;
     
 
     function updateAnimationNumbers(prizeSection) {
-        spinValue = (360 * spinCount) - (prizeSection * 360 / sectionAmount) + initialRotationDeg - wheelOffset;
+        spinValue = (360 * spinCount) - (prizeSection * 360 / sectionAmount) - wheelOffset;
         
     
         const CSSTemplate = `
@@ -32,6 +49,9 @@ const WheelItem = () => {
 
 
     const startHandler = () => {
+
+        // winningNumber = Math.floor(Math.random() * 16 + 1)
+
         updateAnimationNumbers(winningNumber)
         setWheelAnime(true);
 
@@ -57,220 +77,30 @@ const WheelItem = () => {
         <div className="bonus-game__wrapper">
           <div className="bonus-game__wheel">
             <div className={`wheel ${wheelAnime ? 'anime' : null}`}>
-              <div className="wheel__button" onClick={startHandler}></div>
+              <div className={`wheel__button ${wheelAnime ? 'inactive':null}`} onClick={startHandler}></div>
               <div className="wheel__arrow"></div>
               <div id='spinning' className={`wheel__white ${wheelAnime ? 'spinning' : null}`}
                 style={{transform:`rotate(${initialSpinRotation}deg)`}}>
                 <div className="wheel__mid">
                   <div className="wheel__inner">
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
+                  
+
+                    {WheelArray.map(item=>
+                        <div className="wheel__element">
+                        <div className="wheel__element-anker">
                         <div className="wheel__element-white"></div>
                         <div className="wheel__element-inactive"></div>
                         <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
+                            <div className="wheel__element-fire"></div>
                         </div>
                         <div className="wheel__element-content">
-                          <div className="wheel__element-text">1000₾</div>
-                          <div className="wheel__element-icon gel"></div>
+                            <div className={`wheel__element-text ${item.textBlack ? "black":null}`}> {item.text}</div>
+                            <div className={`wheel__element-icon ${item.iconClass}`}></div>
                         </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
                         </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">5₾</div>
-                          <div className="wheel__element-icon p2p"></div>
                         </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text black">10₾</div>
-                          <div className="wheel__element-icon dice"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">10₾</div>
-                          <div className="wheel__element-icon p2p"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text black">20₾</div>
-                          <div className="wheel__element-icon dice"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">10000₾</div>
-                          <div className="wheel__element-icon gel"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text black">50₾</div>
-                          <div className="wheel__element-icon dice"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">20₾</div>
-                          <div className="wheel__element-icon p2p"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text black">1₾</div>
-                          <div className="wheel__element-icon dice"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">50₾</div>
-                          <div className="wheel__element-icon p2p"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">250</div>
-                          <div className="wheel__element-icon gel"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">100₾</div>
-                          <div className="wheel__element-icon p2p"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text black">2₾</div>
-                          <div className="wheel__element-icon dice"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">1₾</div>
-                          <div className="wheel__element-icon p2p"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text black">5₾</div>
-                          <div className="wheel__element-icon dice"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="wheel__element">
-                      <div className="wheel__element-anker">
-                        <div className="wheel__element-white"></div>
-                        <div className="wheel__element-inactive"></div>
-                        <div className="wheel__element-active">
-                          <div className="wheel__element-fire"></div>
-                        </div>
-                        <div className="wheel__element-content">
-                          <div className="wheel__element-text">2₾</div>
-                          <div className="wheel__element-icon p2p"></div>
-                        </div>
-                      </div>
-                    </div>
+                        
+                        )}
                     <div className="wheel__shadow"></div>
                   </div>
                 </div>
