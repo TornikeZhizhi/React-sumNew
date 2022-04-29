@@ -219,10 +219,15 @@ code {
   font-style: italic;
 }
 
-
+.MuiFormGroup-root {
+  margin-left: auto;
+}
 @media screen and (max-width: 600px) {
 .Hangman {
   max-width: 320px;
+}
+.MuiFormGroup-root {
+  display: none !important;
 }
 
 .resource_wrapper {

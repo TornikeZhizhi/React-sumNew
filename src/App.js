@@ -6,6 +6,7 @@ import HeaderSwitchContext from "./ContextApi/HeaderSwitcherContext";
 import ProductsContext from "./ContextApi/ProductsContext";
 import ResourcesMain from "./Components/Resources/ResourcesMain";
 import HangManMain from "./Components/HangMan/HangManMain";
+import Wheel from "./Components/Wheel/Wheel";
 import Shop from "./shop/Shop";
 import ShopProvider from "./ContextApi/ShopContext";
 import ShopCheckout from "./shop-checkout/Shop-checkout"
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/hangman" exact>
               <HangManMain></HangManMain>
+            </Route>
+            <Route path="/wheel">
+              <Wheel></Wheel>
             </Route>
             <Route path="/products" exact>
               <Products></Products>

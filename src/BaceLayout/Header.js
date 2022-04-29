@@ -18,6 +18,7 @@ const Header = () => {
                     <li><NavLink activeClassName={classes.active} to="/products">Products</NavLink></li>
                     <li><NavLink activeClassName={classes.active} to="/resource">Resource</NavLink></li>
                     <li><NavLink activeClassName={classes.active} to="/hangman">Hangman</NavLink></li>
+                    <li><NavLink activeClassName={classes.active} to="/wheel">Wheel</NavLink></li>
                     {/* <li><NavLink activeClassName={classes.active} to="/toast">Toast</NavLink></li> */}
                 </ul>
                 <DayNightSwitcher></DayNightSwitcher>
