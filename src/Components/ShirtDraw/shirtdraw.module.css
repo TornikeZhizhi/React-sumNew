@@ -86,3 +86,101 @@ font-size: 20px;
 .apparel_boxes {
     display: flex;
 }
+
+.shirt_inner_fluid {
+    display: flex;
+}
+
+.accordion_container {
+    
+    width: 100%;
+    max-width: 340px;
+    background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+padding: 20px 10px 40px 10px;
+}
+
+.accordion_container h3{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.accordion {
+    margin-bottom: 10px;
+    background: #E44D26;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F16529, #E44D26);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F16529, #E44D26); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.accordion * {
+    color: #fff;
+}
+
+.shirt_inner_container {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.shirt_body {
+    max-width: 550px;
+    height: 550px;
+    flex: 0 0 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shirt_body img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.front_back {
+    position: absolute;
+    top: 30px;
+    left: 44px;
+}
+
+.front_back div{
+
+    padding: 5px 20px;
+    border-radius: 2px;
+    background: #E44D26;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F16529, #E44D26);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F16529, #E44D26); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+
+.colors {
+
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    padding: 15px 15px;
+    border-radius: 3px;
+}
+
+.colors span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: orange;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
