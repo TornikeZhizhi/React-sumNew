@@ -267,5 +267,6 @@ padding: 20px 10px 40px 10px;
 
     .shirt_body {
         width: 100%;
+        flex: 0 0 100%;
     }
   }
