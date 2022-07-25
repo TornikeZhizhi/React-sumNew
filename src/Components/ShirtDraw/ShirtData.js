@@ -10,7 +10,7 @@ export default [
         { front: "sky-blue-shirt-front.png", back: "sky-blue-shirt.png" },
         { front: "yellow-shirt-front.png", back: "yellow-shirt.png" }
       ],
-      colors:["#000000","green", "blue", "blue","yellow"]
+      colors:["#000000","#00a269", "#292e51", "#7fb3ca","#eed100"]
     },
     {
       clothName: "Hoodie",
