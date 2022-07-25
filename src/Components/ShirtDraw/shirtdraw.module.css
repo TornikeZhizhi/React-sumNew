@@ -1,0 +1,88 @@
+.apparel_fluid {
+
+    display: flex;
+    /* align-items: center; */
+    padding-top: 2%;
+    padding-bottom: 10%;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.apparel_fluid h2 {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px 0;
+    color: #000;
+}
+
+.apparel_banner {
+    width: 800px;
+    height: 300px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.apparel_banner img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+   
+
+}
+
+.apparel_box:hover img{
+
+    transform: scale(1.05);
+}
+
+.apparel_img {
+
+    width:100%;
+    height: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 3px 0px #000;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.apparel_box:not(:last-child){
+    margin-right: 20px;
+}
+
+
+.apparel_box {
+    width:175px;
+    height: 234px;
+}
+
+.apparel_img img {
+    width: 92%;
+    height: 92%;
+    object-fit: contain;
+    transition: all .3s;
+}
+
+.apparel_text {
+    background: #ff9966;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+padding: 10px;
+font-size: 20px;
+}
+
+.apparel_boxes {
+    display: flex;
+}

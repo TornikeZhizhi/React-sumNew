@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import StoredResource from "./StoredResources";
 import AddNewResources from "./AddNewResources";
 import TextField from '@mui/material/TextField';
+import Ptest from "../Producets/Ptest";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -113,6 +114,7 @@ const ResourcesMain = (props) => {
 
     return (
         <Container p={10}>
+          {/* <Ptest></Ptest> */}
             <Typography variant="h3" m={3} style={{textAlign:"center"}}>Resources</Typography>
             <Box sx={{ flexGrow: 1,borderRadius:"5px" }}>
                 <Grid container spacing={1}>
