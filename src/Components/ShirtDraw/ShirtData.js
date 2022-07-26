@@ -4,13 +4,13 @@ export default [
       id: "shirt",
       // mainImg:"yellow-shirt-front.png",
       src: [
+        { front: "yellow-shirt-front.png", back: "yellow-shirt.png" },
         { front: "black-shirt-front.png", back: "black-shirt.png" },
         { front: "kelly-green-shirt-front.png", back: "kelly-green-shirt.png" },
         { front: "navy-shirt-front.png", back: "navy-shirt.png" },
         { front: "sky-blue-shirt-front.png", back: "sky-blue-shirt.png" },
-        { front: "yellow-shirt-front.png", back: "yellow-shirt.png" }
       ],
-      colors:["#000000","#00a269", "#292e51", "#7fb3ca","#eed100"]
+      colors:["#eed100","#000000","#00a269", "#292e51", "#7fb3ca" ]
     },
     {
       clothName: "Hoodie",
