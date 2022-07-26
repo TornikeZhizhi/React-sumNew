@@ -1,33 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from "./shirtdraw.module.css";
-import {useParams,Link}  from "react-router-dom";
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {useParams}  from "react-router-dom";
 import Draggable from "react-draggable";
 import ClothData from './ShirtData.js';
-import { SketchPicker } from 'react-color';
-
 import { Rnd } from "react-rnd";
-
-
-
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
 import SideBar from './SideBar';
 
 
 const Shirt = () => {
 
-    // const style = {
-    //     display: "flex",
-    //     alignItems: "center",
-    //     justifyContent: "center",
-    //     border: "solid 1px #ddd",
-    //     background: "red"
-    //   };
+
     const params = useParams()
     const [dataCloth,setDataCloth] = useState(ClothData[0])
 
@@ -44,36 +26,21 @@ const Shirt = () => {
     const [toggleBorder, setToggleBorder] = useState(false);
 
 
-
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-
-    const trackPos = (data) => {
-      setPosition({ x: data.x, y: data.y });
-    };
+   
   
 
    
   
 
   useEffect(()=>{
-    // alert("s")
-
     if (params.id == "shirt"){
-
         setDataCloth(ClothData[0])
         setMainImg(ClothData[0].src[0].front)
-
     }else{
         setDataCloth(ClothData[1])
         setMainImg(ClothData[1].src[0].front)
     }
-
-
-    console.log(params.id ,ClothData[1])
-    
-    // setMainImg(setDataCloth);
   },[])  
-
 
     const inputHandler = (value)=>{
         setInputText(value)
@@ -85,23 +52,15 @@ const Shirt = () => {
         }
     }
 
+    const changeColorHandler = ((index)=>{
+        setMainImg(dataCloth.src[index].front);
+        setImgIndex(index)
+    })
 
-
-  const changeColorHandler = ((index)=>{
-    // alert("ss")
-    setMainImg(dataCloth.src[index].front);
-    setImgIndex(index)
-    // console.log(mainImg)
-
-  })
-
-  const handleColorChangeComplete =(color)=>{
-    // console.log(color.hex)
-    setColorPicker(color.hex)
-    // this.setState({ background: color.hex });
-  }
+    const handleColorChangeComplete =(color)=>{
+        setColorPicker(color.hex)
+    }
  
-
   const handleChange = (value) => {
     setGoogleFont(value);
   };
@@ -112,24 +71,18 @@ const Shirt = () => {
 
   const addImageHandler = (imgSrc)=>{
     setImgForDraw(imgSrc)
-
   }
 
   const removeImg =()=> {
     setImgForDraw(null)
-
   }
   const removeText =()=> {
-
     setInputText("")
   }
 
   const toggleBorderHandler =()=> {
-
     setToggleBorder(!toggleBorder)
-
   }
-
 
   const frontHandler = (()=> {
     setMainImg(dataCloth.src[imgIndex].front);
@@ -140,7 +93,6 @@ const Shirt = () => {
 
     return (
         <div className={classes.shirt_inner_fluid}>
-
             <SideBar inputHandler={inputHandler}
             inputText={inputText}
             fontHandler={fontHandler}
@@ -152,7 +104,6 @@ const Shirt = () => {
             handleColorChangeComplete={handleColorChangeComplete}
             colorPicker={colorPicker}
             addImageHandler={addImageHandler}
-            
             dataCloth={dataCloth}></SideBar>
 
             <div className={classes.shirt_inner_container}>
@@ -164,49 +115,35 @@ const Shirt = () => {
                 <div className={classes.colors}>
                     {dataCloth.colors.map((bgColor,index)=>
                         <span onClick={()=>changeColorHandler(index)} key={index} style={{background:bgColor}}></span>
-                        
                     )}
                 </div>
                 <div className={`${classes.shirt_body} ` + (toggleBorder ? classes.hidden : null)}>
-
-      
                        <img src={require('./imgs/'+mainImg+'')}/>
                        <div className={classes.dragable_container}>
                        {imgForDraw &&  
                         <Rnd
                         className={classes.rdn}
-                             bounds="parent"
-                         // style={style}
+                        bounds="parent"
                         default={{
                         x: 0,
                         y: 0,
                         width: 120,
                         height:120
-                        }}
-                    >  <img src={require('./imgs/'+imgForDraw+'')}/>
+                        }}> 
+                         <img src={require('./imgs/'+imgForDraw+'')}/>
                         <span onClick={removeImg} className={classes.removeImg}>X</span>
-                           
-                    </Rnd>
+                         </Rnd>
                         }  
                         {inputText && <span onClick={removeText} className={classes.removeImg}>X</span> }
-                         
-                        
-                         <Draggable  bounds={{top: -50, left: -50, right: 330, bottom: 380}}
-                                    onDrag={(e, data) => trackPos(data)}
-                                
-                                >
-                       
+                         <Draggable  bounds={{top: -50, left: -50, right: 330, bottom: 380}}>
                             <span style={{fontSize:font+"px", 
                             fontFamily:googleFont, 
                             fontWeight:fontWeight,
                             color:colorPicker}}>  {inputText}</span>
-                           
-                  
                             </Draggable>
                        </div>
                 </div>
             </div>
-       
         </div>
     );
 };
