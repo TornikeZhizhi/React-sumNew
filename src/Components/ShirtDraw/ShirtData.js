@@ -10,6 +10,7 @@ export default [
         { front: "navy-shirt-front.png", back: "navy-shirt.png" },
         { front: "sky-blue-shirt-front.png", back: "sky-blue-shirt.png" },
       ],
+      drawImages:["creed.png","georgia.png","joker.png","joker_text.png"],
       colors:["#eed100","#000000","#00a269", "#292e51", "#7fb3ca" ]
     },
     {
@@ -23,6 +24,7 @@ export default [
         { front: "sky-blue-shirt-front.png", back: "sky-blue-shirt.png" },
         { front: "yellow-shirt-front.png", back: "yellow-shirt.png" }
       ],
+      drawImages:["creed.png","georgia.png","joker.png","joker_text.png"],
       colors:["#000000","green", "blue", "blue","yellow"]
     },
    

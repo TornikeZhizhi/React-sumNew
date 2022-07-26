@@ -179,11 +179,21 @@ const Shirt = () => {
                 >
                 <Typography>Add Img</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                </Typography>
+                <AccordionDetails className={classes.accordion_details}>
+                <div className={classes.accordion_body}>
+                    <div className={classes.addImage}>
+
+                        {ClothData[0].drawImages.map((images,index)=>
+                        <div className={classes.drawimg_wrapper}>
+
+                            <img  src={require('./imgs/'+images+'')} key={index} />
+                            <span className={classes.add}>Add</span>
+        
+                        </div>
+                    )}
+
+                    </div>
+                </div>
                 </AccordionDetails>
             </Accordion>
             </div>
