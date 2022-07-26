@@ -249,7 +249,7 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29) !important;
     cursor: move;
     user-select: none;
     /* transition: all .1s; */
-    width: 100%;
+    /* width: 100%; */
     display: inline-block;
     text-align: center;
 }

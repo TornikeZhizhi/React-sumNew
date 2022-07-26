@@ -267,7 +267,7 @@ const Shirt = () => {
                         {inputText && <span onClick={removeText} className={classes.removeImg}>X</span> }
                          
                         
-                         <Draggable  bounds={{top: -10, left: -10, right: 130, bottom: 180}}
+                         <Draggable  bounds={{top: -50, left: -50, right: 330, bottom: 380}}
                                     onDrag={(e, data) => trackPos(data)}
                                 
                                 >
