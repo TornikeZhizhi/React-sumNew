@@ -236,11 +236,11 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29) !important;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 95px;
+    top: 60px;
     z-index: 10;
     border: 1px solid #ff000038;
-    width: 277px;
-    height: 301px;
+    width: 297px;
+    height: 360px;
 }
 
 .dragable_container span {
@@ -402,9 +402,9 @@ cursor: pointer;
     }
 
     .dragable_container {
-        top: 160px;
+        top: 140px;
         z-index: 10;
-        width: 157px;
-        height: 200px;
+        width: 194px;
+        height: 268px;
     }
   }
