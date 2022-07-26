@@ -16,6 +16,7 @@ import { Rnd } from "react-rnd";
 
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import SideBar from './SideBar';
 
 
 const Shirt = () => {
@@ -74,13 +75,13 @@ const Shirt = () => {
   },[])  
 
 
-    const inputHandler = (event)=>{
-        setInputText(event.target.value)
+    const inputHandler = (value)=>{
+        setInputText(value)
     }
 
-    const fontHandler = (event)=>{
-        if(event.target.value < 100){
-            setFont(event.target.value)
+    const fontHandler = (value)=>{
+        if(value < 100){
+            setFont(value)
         }
     }
 
@@ -101,11 +102,11 @@ const Shirt = () => {
   }
  
 
-  const handleChange = (event) => {
-    setGoogleFont(event.target.value);
+  const handleChange = (value) => {
+    setGoogleFont(value);
   };
-  const fontWeightHandler = (event) => {
-    setFontWeight(event.target.value);
+  const fontWeightHandler = (value) => {
+    setFontWeight(value);
   
   };
 
@@ -140,97 +141,20 @@ const Shirt = () => {
     return (
         <div className={classes.shirt_inner_fluid}>
 
-            <div className={classes.accordion_container}>
-                <h3>Design Your Product</h3>
-             <Accordion className={classes.accordion}>
-                <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                >
-                <Typography>Add Text</Typography>
-                </AccordionSummary>
-                <AccordionDetails className={classes.accordion_details}>
-                    <div className={classes.accordion_body}>
-                        <label className={classes.accordion_label} >Text:</label>
-                        <input className={classes.accordion_input} value={inputText}  onInput={inputHandler} type="text" name="text"/>
-                    </div>
-                    <div className={classes.accordion_body}>
-                        <label className={classes.accordion_label} >Font Size:</label>
-                        <input className={classes.accordion_input} value={font} onInput={fontHandler} type="number" name="text" max="5"/>
-                    </div>
-                    <div className={classes.accordion_body}>
-                        <label className={classes.accordion_label} >Font</label>
-                        <Select className={classes.ui_select}
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={googleFont}
-                            label="font"
-                            onChange={handleChange}
-                            >
-                            <MenuItem value={"Roboto"}>Roboto</MenuItem>
-                            <MenuItem value={"Dancing Script,cursive"}>Dancing Script</MenuItem>
-                            <MenuItem value={"Shadows Into Light"}>'Shadows Into Light'</MenuItem>
-                        </Select>
-                    
-                    </div>
+            <SideBar inputHandler={inputHandler}
+            inputText={inputText}
+            fontHandler={fontHandler}
+            font={font}
+            handleChange={handleChange}
+            googleFont={googleFont}
+            fontWeightHandler={fontWeightHandler}
+            fontWeight={fontWeight}
+            handleColorChangeComplete={handleColorChangeComplete}
+            colorPicker={colorPicker}
+            addImageHandler={addImageHandler}
+            
+            dataCloth={dataCloth}></SideBar>
 
-                    <div className={classes.accordion_body}>
-                        <label className={classes.accordion_label} >FontWeight</label>
-                         <Select className={classes.ui_select}
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={fontWeight}
-                            label="fontweight"
-                            onChange={fontWeightHandler}
-                            >
-                            <MenuItem value={"300"}>300</MenuItem>
-                            <MenuItem value={"400"}>400</MenuItem>
-                            <MenuItem value={"500"}>500</MenuItem>
-                            <MenuItem value={"600"}>600</MenuItem>
-                            <MenuItem value={"700"}>700</MenuItem>
-                            <MenuItem value={"800"}>800</MenuItem>
-                        </Select>
-                    </div>
-
-                    <div className={classes.accordion_body}>
-                    <label className={classes.accordion_label} >Color</label>
-   
-                    <SketchPicker
-                        className={classes.colorPicker}
-                        color={ colorPicker }
-                        onChangeComplete={ handleColorChangeComplete }
-                    />
-
-                    </div>
-                </AccordionDetails>
-            </Accordion>
-            <Accordion className={classes.accordion}>
-                <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel2a-content"
-                id="panel2a-header"
-                >
-                <Typography>Add Img</Typography>
-                </AccordionSummary>
-                <AccordionDetails className={classes.accordion_details}>
-                <div className={classes.accordion_body}>
-                    <div className={classes.addImage}>
-
-                        {ClothData[0].drawImages.map((images,index)=>
-                        <div className={classes.drawimg_wrapper}>
-
-                            <img  src={require('./imgs/'+images+'')} key={index} />
-                            <span onClick={()=>addImageHandler(images)} className={classes.add}>Add</span>
-        
-                        </div>
-                    )}
-
-                    </div>
-                </div>
-                </AccordionDetails>
-            </Accordion>
-            </div>
             <div className={classes.shirt_inner_container}>
                 <div className={classes.front_back}>
                     <div className='front' onClick={frontHandler}>Front</div>
