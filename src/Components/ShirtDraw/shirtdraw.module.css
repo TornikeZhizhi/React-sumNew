@@ -138,6 +138,15 @@ padding: 20px 10px 40px 10px;
     position: relative;
 }
 
+.shirt_body.hidden .dragable_container,
+.shirt_body.hidden .rdn{
+    border-color: transparent !important;
+}
+
+.shirt_body.hidden .removeImg{
+    visibility: hidden;
+}
+
 .shirt_body img {
     width: 90%;
     height: 90%;
@@ -149,6 +158,9 @@ padding: 20px 10px 40px 10px;
     top: 30px;
     left: 44px;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .front_back div{
@@ -161,6 +173,12 @@ padding: 20px 10px 40px 10px;
     color: #fff;
     margin-bottom: 10px;
     cursor: pointer;
+
+}
+
+.toggleBorders {
+    background: #0f0c29;  /* fallback for old browsers */
+background: linear-gradient(to left, #24243e, #302b63, #0f0c29) !important;
 
 }
 
@@ -218,11 +236,11 @@ padding: 20px 10px 40px 10px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 140px;
+    top: 95px;
     z-index: 10;
-    border: 1px solid red;
-    width: 190px;
-    height: 200px;
+    border: 1px solid #ff000038;
+    width: 277px;
+    height: 301px;
 }
 
 .dragable_container span {
@@ -294,7 +312,9 @@ margin-bottom: 10px;
 background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-
+.rdn {
+    border: 1px solid #8e2de25c;
+}
 .add {
     text-align: center;
     padding: 3px 3px;
@@ -302,13 +322,39 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
 background: linear-gradient(to left, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 cursor: pointer;
 }
+
+
+
+.removeImg {
+
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px !important;
+    font-weight: bold;
+}
+
+.rdn img {
+    width: 100% !important;
+    height: 100% !important;
+}
     
 @media only screen and (max-width: 992px) {
     .shirt_inner_fluid {
 
         flex-direction: column;
     }
-
+    .front_back {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .front_back>div {
+        margin-right: 5px;
+    }
     header {
         flex-wrap: wrap;
     }
@@ -320,6 +366,21 @@ cursor: pointer;
         height: 200px;
     }
 
+    .colors {
+        padding: 10px 10px;
+    }
+.colors span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+
+.shirt_body img {
+    height: auto;
+    width: 100%;
+}
     .accordion_container {
         width: 100%;
         max-width: 100%;

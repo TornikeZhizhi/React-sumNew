@@ -39,6 +39,10 @@ const Shirt = () => {
     const [fontWeight, setFontWeight] = useState('300');
     const [colorPicker, setColorPicker] = useState('#000');
 
+    const [imgForDraw, setImgForDraw] = useState(null);
+    const [toggleBorder, setToggleBorder] = useState(false);
+
+
 
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -94,6 +98,26 @@ const Shirt = () => {
     setFontWeight(event.target.value);
   
   };
+
+  const addImageHandler = (imgSrc)=>{
+    setImgForDraw(imgSrc)
+
+  }
+
+  const removeImg =()=> {
+    setImgForDraw(null)
+
+  }
+  const removeText =()=> {
+
+    setInputText("")
+  }
+
+  const toggleBorderHandler =()=> {
+
+    setToggleBorder(!toggleBorder)
+
+  }
 
 
   const frontHandler = (()=> {
@@ -187,7 +211,7 @@ const Shirt = () => {
                         <div className={classes.drawimg_wrapper}>
 
                             <img  src={require('./imgs/'+images+'')} key={index} />
-                            <span className={classes.add}>Add</span>
+                            <span onClick={()=>addImageHandler(images)} className={classes.add}>Add</span>
         
                         </div>
                     )}
@@ -200,39 +224,50 @@ const Shirt = () => {
             <div className={classes.shirt_inner_container}>
                 <div className={classes.front_back}>
                     <div className='front' onClick={frontHandler}>Front</div>
-                    <div className='back' onClick={backHandler}>Back</div>    
+                    <div className='back' onClick={backHandler}>Back</div>
+                    <div  className={classes.toggleBorders} onClick={toggleBorderHandler}>Toggle borders</div>
                 </div>
                 <div className={classes.colors}>
                     {ClothData[0].colors.map((bgColor,index)=>
                         <span onClick={()=>changeColorHandler(index)} key={index} style={{background:bgColor}}></span>
+                        
                     )}
                 </div>
-                <div className={classes.shirt_body}>
+                <div className={`${classes.shirt_body} ` + (toggleBorder ? 'show' : classes.hidden)}>
 
       
                        <img src={require('./imgs/'+mainImg+'')}/>
                        <div className={classes.dragable_container}>
-                        {/* <Rnd
+                       {imgForDraw &&  
+                        <Rnd
+                        className={classes.rdn}
                              bounds="parent"
                          // style={style}
                         default={{
                         x: 0,
                         y: 0,
                         width: 120,
-                        height:30
+                        height:120
                         }}
-                    >
-                    {inputText}
-                    </Rnd> */}
+                    >  <img src={require('./imgs/'+imgForDraw+'')}/>
+                        <span onClick={removeImg} className={classes.removeImg}>X</span>
+                           
+                    </Rnd>
+                        }  
+                        {inputText && <span onClick={removeText} className={classes.removeImg}>X</span> }
+                         
+                        
                          <Draggable  bounds={{top: -10, left: -10, right: 130, bottom: 180}}
                                     onDrag={(e, data) => trackPos(data)}
                                 
                                 >
-                                    
+                       
                             <span style={{fontSize:font+"px", 
                             fontFamily:googleFont, 
                             fontWeight:fontWeight,
                             color:colorPicker}}>  {inputText}</span>
+                           
+                  
                             </Draggable>
                        </div>
                 </div>
