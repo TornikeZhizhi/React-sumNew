@@ -28,7 +28,7 @@ const Shirt = () => {
     //     background: "red"
     //   };
     const params = useParams()
-    const [dataCloth,setDataCloth] = useState([])
+    const [dataCloth,setDataCloth] = useState(ClothData[0])
 
     const [imgIndex, setImgIndex] = useState(0)
     const [mainImg,setMainImg] = useState("yellow-shirt-front.png");
@@ -54,14 +54,24 @@ const Shirt = () => {
    
   
 
-//   useEffect(()=>{
+  useEffect(()=>{
     // alert("s")
-    // params.id == "shirt" ?setDataCloth(ClothData[0]) : setDataCloth(ClothData[1])
 
-    // console.log(dataCloth,ClothData[1])
+    if (params.id == "shirt"){
 
-    // setMainImg(ClothData[0].src[imgIndex].front);
-//   },[imgIndex])  
+        setDataCloth(ClothData[0])
+        setMainImg(ClothData[0].src[0].front)
+
+    }else{
+        setDataCloth(ClothData[1])
+        setMainImg(ClothData[1].src[0].front)
+    }
+
+
+    console.log(params.id ,ClothData[1])
+    
+    // setMainImg(setDataCloth);
+  },[])  
 
 
     const inputHandler = (event)=>{
@@ -78,14 +88,14 @@ const Shirt = () => {
 
   const changeColorHandler = ((index)=>{
     // alert("ss")
-    setMainImg(ClothData[0].src[index].front);
+    setMainImg(dataCloth.src[index].front);
     setImgIndex(index)
     // console.log(mainImg)
 
   })
 
   const handleColorChangeComplete =(color)=>{
-    console.log(color.hex)
+    // console.log(color.hex)
     setColorPicker(color.hex)
     // this.setState({ background: color.hex });
   }
@@ -121,10 +131,10 @@ const Shirt = () => {
 
 
   const frontHandler = (()=> {
-    setMainImg(ClothData[0].src[imgIndex].front);
+    setMainImg(dataCloth.src[imgIndex].front);
   })
   const backHandler = (()=> {
-    setMainImg(ClothData[0].src[imgIndex].back);
+    setMainImg(dataCloth.src[imgIndex].back);
   })
 
     return (
@@ -228,12 +238,12 @@ const Shirt = () => {
                     <div  className={classes.toggleBorders} onClick={toggleBorderHandler}>Toggle borders</div>
                 </div>
                 <div className={classes.colors}>
-                    {ClothData[0].colors.map((bgColor,index)=>
+                    {dataCloth.colors.map((bgColor,index)=>
                         <span onClick={()=>changeColorHandler(index)} key={index} style={{background:bgColor}}></span>
                         
                     )}
                 </div>
-                <div className={`${classes.shirt_body} ` + (toggleBorder ? 'show' : classes.hidden)}>
+                <div className={`${classes.shirt_body} ` + (toggleBorder ? classes.hidden : null)}>
 
       
                        <img src={require('./imgs/'+mainImg+'')}/>
