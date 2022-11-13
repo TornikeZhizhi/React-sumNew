@@ -94,17 +94,18 @@ const Shirt = () => {
     return (
         <div className={classes.shirt_inner_fluid}>
             <SideBar inputHandler={inputHandler}
-            inputText={inputText}
-            fontHandler={fontHandler}
-            font={font}
-            handleChange={handleChange}
-            googleFont={googleFont}
-            fontWeightHandler={fontWeightHandler}
-            fontWeight={fontWeight}
-            handleColorChangeComplete={handleColorChangeComplete}
-            colorPicker={colorPicker}
-            addImageHandler={addImageHandler}
-            dataCloth={dataCloth}></SideBar>
+                inputText={inputText}
+                fontHandler={fontHandler}
+                font={font}
+                handleChange={handleChange}
+                googleFont={googleFont}
+                fontWeightHandler={fontWeightHandler}
+                fontWeight={fontWeight}
+                handleColorChangeComplete={handleColorChangeComplete}
+                colorPicker={colorPicker}
+                addImageHandler={addImageHandler}
+                dataCloth={dataCloth}>
+            </SideBar>
 
             <div className={classes.shirt_inner_container}>
                 <div className={classes.front_back}>
@@ -123,7 +124,7 @@ const Shirt = () => {
                        {imgForDraw &&  
                         <Rnd
                         className={classes.rdn}
-                        bounds="parent"
+                        // bounds="parent"
                         default={{
                         x: 0,
                         y: 0,

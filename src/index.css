@@ -234,3 +234,363 @@ code {
   width: 95% !important;
 }
 }
+
+
+
+/* draw  */
+
+.draw_fluid {
+  max-width: 940px;
+  margin: 50px auto 0;
+}
+
+.draw_tabs_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+.draw_tabs_wrapper .draw_tab {
+  width: 25%;
+  height: 57px;
+  background: linear-gradient(180deg, #2E3D74 0%, #121E4E 95.31%);
+  border-radius: 6px 6px 0px 0px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-family: "AdjaraSemiBold";
+  cursor: pointer;
+  transition: 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.draw_tabs_wrapper .draw_tab.active {
+  background: linear-gradient(180deg, #5460B0 0%, #293581 100%);
+  border-radius: 6px 6px 0px 0px;
+  height: 70px;
+  color: #fff;
+  padding: 0 0 0 20px;
+}
+.draw_tabs_content_container {
+  background-color: #293581;
+  padding: 13px 17px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 42%);
+}
+
+
+
+.draw_tabs_content_container .draw_tabs_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.draw_tabs_content_container .draw_tabs_content.active {
+  display: flex;
+}
+
+.draw_tabs_content_container .draw_tabs_content .draw_tabs_date_wrapper {
+  background: #0C1332;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  padding: 15px 32px;
+}
+.draw_tabs_content_container .draw_tabs_content .draw_tabs_date_wrapper .draw_tabs_date, .draw_tabs_content_container .draw_tabs_content .draw_tabs_date_wrapper .draw_tabs_time {
+  color: #fff;
+  font-size: 22px;
+  font-family: "AdjaraBold";
+  line-height: 1;
+}
+
+
+
+.draw_tabs_content_container .draw_tabs_content .draw_tabs_date_wrapper .draw_tabs_date, .draw_tabs_content_container .draw_tabs_content .draw_tabs_date_wrapper .draw_tabs_time {
+  color: #fff;
+  font-size: 22px;
+  font-family: "AdjaraBold";
+  line-height: 1;
+}
+.draw_tabs_content_container .draw_tabs_content .draw_tabs_date_wrapper .draw_tabs_time {
+  color: #FF4040;
+  margin-left: 8px;
+}
+
+.draw_tabs_body_text {
+  flex-grow: 1;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.draw_tabs_body_text .draw_tabs_body_text1, .draw_tabs_body_text .draw_tabs_body_text2 {
+  color: #B4B4B4;
+  font-size: 13px;
+  font-family: "AdjaraRegular";
+}
+
+.draw_tabs_body_text .draw_tabs_body_text2 {
+  color: #fff;
+  margin-left: 7px;
+}
+.draw_tabs_quantity_wrapper {
+  display: flex;
+  align-items: center;
+  background: #1681FD;
+  border-radius: 8px;
+  padding: 10px 39px;
+  justify-content: center;
+}
+
+.draw_tabs_quantity_wrapper .draw_tabs_quantity_img {
+  /* background-image: url(../img/star.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 27px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+.draw_tabs_quantity_wrapper .draw_tabs_quantity_text {
+  color: #fff;
+  font-family: "AdjaraBold";
+  font-size: 22px;
+}
+
+.draw_main_img_wrapper {
+  height: 431px;
+  width: 100%;
+  border: 2px solid #916CFF;
+  border-top: unset;
+  border-bottom: unset;
+}
+
+.draw_main_img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+
+.draw_main_img.active {
+  display: flex;
+}
+
+
+.draw_main_img_title_wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #3452BD 0%, #08174D 95.31%);
+  backdrop-filter: blur(4px);
+  min-height: 50px;
+  padding: 10px 24px;
+  border-left: 2px solid #916CFF;
+  border-right: 2px solid #916CFF;
+  display: none;
+}
+
+
+.draw_main_img_title_wrapper.active {
+  display: flex;
+}
+.draw_main_img_title_wrapper .draw_main_img_title {
+  font-family: "AdjaraBold";
+  color: #fff;
+  font-size: 16px;
+}
+
+.draw_main_img_title_wrapper .draw_main_tooltip_wrapper {
+  position: relative;
+}
+.draw_main_img_title_wrapper .draw_tooltip_img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url(../img/notification.svg); */
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  cursor: pointer;
+}
+
+.draw_main_img_title_wrapper .draw_tooltip_body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-image: url(../img/tooltip-smh-mob.png); */
+  position: absolute;
+  width: 343px;
+  height: 248px;
+  bottom: 0;
+  right: 0;
+  bottom: 26px;
+  right: -13px;
+  color: #142151;
+  font-family: "AdjaraBold";
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 25px;
+  display: none;
+}
+
+.draw_main_img_title_wrapper .draw_tooltip_body .draw_tooltip_title {
+  color: #142151;
+  font-size: 16px;
+  font-family: "AdjaraBold";
+}
+.draw_main_img_title_wrapper .draw_tooltip_body .draw_tooltip_title2, .draw_main_img_title_wrapper .draw_tooltip_body .draw_tooltip_text {
+  color: #142151;
+  font-size: 11px;
+  font-family: "AdjaraSemiBold";
+}
+.draw_main_img_title_wrapper .draw_tooltip_body .draw_tooltip_text {
+  margin-top: 10px;
+}
+
+.draw_main_img_title_wrapper .draw_tooltip_body .draw_tooltip_title2, .draw_main_img_title_wrapper .draw_tooltip_body .draw_tooltip_text {
+  color: #142151;
+  font-size: 11px;
+  font-family: "AdjaraSemiBold";
+}
+
+.draw_car_logos_wrapper {
+  background: linear-gradient(104.52deg, #916CFF 15.85%, #CBB9FE 30.87%, #FFFDFD 44.11%, #88BEFD 58.54%, #1681FD 72.38%);
+  padding: 3px 0 1px 0;
+  min-height: 89px;
+  display: flex;
+  border-left: 2px solid #916CFF;
+  border-right: 2px solid #916CFF;
+}
+
+.draw_car_logos_wrapper .draw_logo_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #171E54 0%, #544CCE 100%);
+  width: 100%;
+  padding: 0 70px;
+}
+
+.draw_car_logos_wrapper .draw_car_logo {
+  width: 73px;
+  height: 57px;
+  flex: 0 0 73px;
+  background-image: url("https://promos-stage.adjarabet.com/big-choice/static/assets/img/logo_bg_active.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+.draw_car_logos_wrapper .draw_car_logo .draw_car_active_bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url(../img/logo_bg_active.svg); */
+  width: 62px;
+  height: 47px;
+  flex: 0 0 62px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 2px solid #BB213F;
+  border-radius: 4px;
+  opacity: 0;
+  transition: all .3s;
+}
+.draw_car_logos_wrapper .draw_car_logo.active .draw_car_active_bg {
+  opacity: 1 !important;
+}
+
+.draw_car_logos_wrapper .draw_car_logo .draw_car {
+  width: 65%;
+  height: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  z-index: 10;
+}
+.draw_car_logos_wrapper .draw_car_logo .draw_car_sold {
+  display: none;
+}
+
+.draw_car_logos_wrapper .draw_car_logo.sold .draw_car_sold {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 181px;
+  height: 60px;
+  border-radius: 4px;
+  color: #142151;
+  font-family: "AdjaraBold";
+  z-index: 50;
+  top: -55px;
+  left: -116px;
+  /* background-image: url(../img/sold_bg.svg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 7px;
+  display: none;
+}
+
+.draw_car_logos_wrapper .draw_car_logo.sold:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("https://promos-stage.adjarabet.com/big-choice/static/assets/img/sold_line.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
+  width: 90%;
+  height: 90%;
+}
+
+.draw_car_logos_wrapper .draw_car_logo.sold .draw_car {
+  opacity: 0.3;
+}
+
+.draw_car_logo.sold {
+  pointer-events: none;
+}
+
+.draw_main_img.big_img0 {
+  background-image: url("https://promos-stage.adjarabet.com/big-choice/static/assets/img/big-porshe.jpg");
+}
+
+.draw_main_img.big_img3 {
+  background-image: url("https://promos-stage.adjarabet.com/big-choice/static/assets/img/bwm.jpg");
+}
+
+.draw_main_img_title_wrapper .draw_tooltip_img:hover ~ .draw_tooltip_body {
+  display: flex !important;
+}
+
+.draw_tooltip_body {
+  background-color: antiquewhite;
+}

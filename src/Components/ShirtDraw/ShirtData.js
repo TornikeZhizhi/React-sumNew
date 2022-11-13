@@ -18,7 +18,7 @@ export default [
       id: "hoodie",
       // mainImg:"yellow-shirt-front.png",
       src: [
-        { front: "light-pink.png", back: "sky-blue-shirt.png" },
+        { front: "light-pink.png", back: "light-pink-hoodie-back.png" },
         { front: "black-hoodie.png", back: "black-hoodie-back.png" },
         { front: "green-hoodie.png", back: "green-hoodie-back.png" },
         { front: "hoodie-yellow-front-hoodie.png", back: "hoodie-yellow-back.png" },

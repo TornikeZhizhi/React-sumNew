@@ -5,6 +5,7 @@ import ProductDetail from "./Components/Producets/ProductDetail";
 import HeaderSwitchContext from "./ContextApi/HeaderSwitcherContext";
 import ProductsContext from "./ContextApi/ProductsContext";
 import ResourcesMain from "./Components/Resources/ResourcesMain";
+import RepeatMain from "./Components/Repeat/Repeat";
 import HangManMain from "./Components/HangMan/HangManMain";
 import Wheel from "./Components/Wheel/Wheel";
 import Shop from "./shop/Shop";
@@ -15,6 +16,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import ShirtDraw from "./Components/ShirtDraw/ShirtDraw";
 import Shirt from "./Components/ShirtDraw/Shirt";
+import RepeatContext from "./Components/Repeat/RepeatContext/RepeatContext";
 
 
 // const handleDragStart = (e) => e.preventDefault();
@@ -37,12 +39,16 @@ function App() {
     <div className="App">
        {/* <AliceCarousel mouseTracking    responsive={responsive} items={items} /> */}
        {/* npm i react-alice-carousel */}
+       <RepeatContext>
         <HeaderSwitchContext>
           <ProductsContext>
             <ShopProvider>
           <Header></Header>
  
           <Switch>
+            <Route path="/repeat" exact>
+              <RepeatMain></RepeatMain>
+            </Route>
             <Route path="/resource" exact>
               <ResourcesMain></ResourcesMain>
             </Route>
@@ -75,7 +81,7 @@ function App() {
           </ShopProvider>
           </ProductsContext>
         </HeaderSwitchContext>
-
+        </RepeatContext>
         
     </div>
   );
