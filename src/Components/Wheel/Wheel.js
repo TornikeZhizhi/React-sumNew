@@ -9,12 +9,12 @@ const Wheel = () => {
     const [wheelAnime, setWheelAnime] = useState(false)
     const [initialSpinRotation, setInitialSpinRotation] = useState(0)
     const [wheelOffset, setwheelOffset] = useState(0);
-
+    const [spinValue, setSpinValue] = useState(0)
 
     const spinDiv = useRef()
       
-    console.log(spinDiv , "ds")
-    let spinValue = 0;
+    // console.log(spinDiv , "ds")
+    let spinValueLive = 0;
     let sectionAmount = 16;
     let spinCount = 5;
     let winningNumber = 1;
@@ -38,19 +38,20 @@ const Wheel = () => {
 
     },[wheelArray])
 
-    function updateAnimationNumbers(prizeSection) {
-        spinValue = (360 * spinCount) - (prizeSection * 360 / sectionAmount) - wheelOffset;
-        
+    const updateAnimationNumbers = (prizeSection)=> {
+       spinValueLive = (360 * spinCount) - (prizeSection * 360 / sectionAmount) - wheelOffset;
+        setSpinValue((360 * spinCount) - (prizeSection * 360 / sectionAmount) - wheelOffset)
         const CSSTemplate = `
             @keyframes spinning {
             from { transform: rotate(${initialSpinRotation}deg); }
-            to {  transform: rotate(${initialSpinRotation + spinValue}deg); }
+            to {  transform: rotate(${initialSpinRotation + spinValueLive}deg); }
             }
         `;
+        // console.log(initialSpinRotation, spinValue)
         const $style = document.createElement("style");
         document.head.appendChild($style);
         $style.innerHTML = CSSTemplate;
-       
+        // console.log(spinValue)
     }
 
 
@@ -73,34 +74,60 @@ const Wheel = () => {
          setWheelArray(updateArray2)
     }
 
+    const animationEndHandler = ()=>{
+      let SynSpinRotation;
+      console.log(spinValue)
+
+      setInitialSpinRotation((prev)=>{
+
+        
+           return prev + spinValue
+      })
+
+      
+      SynSpinRotation = initialSpinRotation + spinValue
+      setWheelAnime(false)
+
+      // console.log(SynSpinRotation % 360)
+      setwheelOffset(SynSpinRotation % 360)
+      
+      addActiveClass()
+
+      setTimeout(()=>{
+
+          alert("You win")
+      },2000)
+      
+    }
+
     const startHandler = () => {
      
 
-        winningNumber = Math.floor(Math.random() * 16 + 1)
+        winningNumber = 1
 
         updateAnimationNumbers(winningNumber)
         setWheelAnime(true);
 
-        document.getElementById("spinning").addEventListener("animationend", function() {
+        // document.getElementById("spinning").addEventListener("animationend", function() {
             
        
-            let SynSpinRotation;
-            setInitialSpinRotation((prev)=>{
-                 return prev + spinValue
-            })
-            SynSpinRotation = initialSpinRotation + spinValue
-            setWheelAnime(false)
-            setwheelOffset(SynSpinRotation % 360)
+        //     let SynSpinRotation;
+        //     setInitialSpinRotation((prev)=>{
+        //          return prev + spinValue
+        //     })
+        //     SynSpinRotation = initialSpinRotation + spinValue
+        //     setWheelAnime(false)
+        //     setwheelOffset(SynSpinRotation % 360)
             
-            addActiveClass()
+        //     addActiveClass()
 
-            setTimeout(()=>{
+        //     setTimeout(()=>{
 
-                alert("You win")
-            },2000)
+        //         alert("You win")
+        //     },2000)
            
 
-        }, {once : true})
+        // }, {once : true})
 
     }
 
@@ -114,7 +141,7 @@ const Wheel = () => {
             <div className={`wheel ${wheelAnime ? 'anime' : null}`}>
               <div className={`wheel__button ${wheelAnime ? 'inactive':null}`} onClick={startHandler}></div>
               <div className="wheel__arrow"></div>
-              <div id='spinning'  className={`wheel__white ${wheelAnime ? 'spinning' : null}`}
+              <div id='spinning' onAnimationEnd={animationEndHandler}  className={`wheel__white ${wheelAnime ? 'spinning' : null}`}
                 style={{transform:`rotate(${initialSpinRotation}deg)`}}>
                 <div className="wheel__mid">
                   <div className="wheel__inner">
