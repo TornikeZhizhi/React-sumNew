@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import "./css/wheel.css";
 import WheelItem from './WheelItem';
 import Dummy_WheelArray from "./WheelData.json";
+import SearchTest from './Search';
 
 const Wheel = () => {
 
@@ -11,19 +12,13 @@ const Wheel = () => {
     const [wheelOffset, setwheelOffset] = useState(0);
     const [spinValue, setSpinValue] = useState(0)
 
-    const spinDiv = useRef()
-      
-    // console.log(spinDiv , "ds")
+
     let spinValueLive = 0;
     let sectionAmount = 16;
     let spinCount = 5;
     let winningNumber = 1;
     
-    // useEffect(()=>{
-    //     spinDiv.current.focus()
-    //     console.log(spinDiv.current)  
 
-    // },[])
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -47,7 +42,7 @@ const Wheel = () => {
             to {  transform: rotate(${initialSpinRotation + spinValueLive}deg); }
             }
         `;
-        // console.log(initialSpinRotation, spinValue)
+ 
         const $style = document.createElement("style");
         document.head.appendChild($style);
         $style.innerHTML = CSSTemplate;
@@ -134,8 +129,9 @@ const Wheel = () => {
 
     return (
         <div className="bonus-game">
-         {initialSpinRotation}
-         <input ref={spinDiv} type="text" />
+         {/* {initialSpinRotation} */}
+         <SearchTest/>
+         {/* <input  type="text" /> */}
         <div className="bonus-game__wrapper">
           <div className="bonus-game__wheel">
             <div className={`wheel ${wheelAnime ? 'anime' : null}`}>
