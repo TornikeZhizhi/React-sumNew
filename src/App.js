@@ -17,6 +17,7 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import ShirtDraw from "./Components/ShirtDraw/ShirtDraw";
 import Shirt from "./Components/ShirtDraw/Shirt";
 import RepeatContext from "./Components/Repeat/RepeatContext/RepeatContext";
+import TypeGame from "./Components/TypeGame/TypeGame";
 
 
 // const handleDragStart = (e) => e.preventDefault();
@@ -66,6 +67,9 @@ function App() {
             </Route>
             <Route path="/products" exact>
               <Products></Products>
+            </Route>
+            <Route path="/type-Game" exact>
+              <TypeGame/>
             </Route>
             <Route path="/products/:id">
               <ProductDetail></ProductDetail>

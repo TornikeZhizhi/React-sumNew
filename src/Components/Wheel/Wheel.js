@@ -130,9 +130,9 @@ const Wheel = () => {
     return (
         <div className="bonus-game">
          {/* {initialSpinRotation} */}
-         <SearchTest/>
+         {/* <SearchTest/> */}
          {/* <input  type="text" /> */}
-        <div className="bonus-game__wrapper">
+        <div className="bonus-game__wrapper"> 
           <div className="bonus-game__wheel">
             <div className={`wheel ${wheelAnime ? 'anime' : null}`}>
               <div className={`wheel__button ${wheelAnime ? 'inactive':null}`} onClick={startHandler}></div>
