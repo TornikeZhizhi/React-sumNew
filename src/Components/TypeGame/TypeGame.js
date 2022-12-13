@@ -10,7 +10,7 @@ import classes from "./TypeGame.module.css";
 
 const TypeGame = () => {
 
-    const typeText = "Rea"
+    const typeText = "Prepared by experienced English teachers, the texts, articles and conversations are brief and appropriate to your level of proficiency."
     const [text, setText ] = useState([]);
 
     const [textareaText, setTextAreaText] = useState()
@@ -139,7 +139,7 @@ const TypeGame = () => {
 
                     })}
                 </div>
-                <textarea className={classes.textare} value={textareaText} onChange={textareaHandler}></textarea>
+                <textarea className={classes.textare} placeholder="Start Type.." value={textareaText} onChange={textareaHandler}></textarea>
 
             </div>
         </div>
