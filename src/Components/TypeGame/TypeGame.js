@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import classes from "./TypeGame.module.css";
 
@@ -21,27 +21,27 @@ const TypeGame = () => {
     
     const textareaHandler =(e)=> {
         setTextAreaText(e.target.value.toLowerCase());
-        setGameRunning(true) 
 
     } 
 
-    let startTime;
-    useEffect(()=>{
-        if(gameRunning){
-            startTime = new Date()
-            setInterval(() => {
-                setGameTime(getTimerTime())
-            }, 1000);
-        }
-    },[gameRunning])
-    const getTimerTime = ()=> {
-        return Math.floor((new Date() - startTime) / 1000)
-    }
+    let interval = useRef()
+    const startTimer = ()=> {
 
+        interval.current = setInterval(() => {
+            setGameTime(prev=>prev + 1)
+        }, 1000);
+  
+    }
+  
+   
+
+    useEffect(()=>{
+
+        startTimer()
+    },[])
   
 
     useEffect(()=>{
-   
         // let updatedArray = text
 
         // for (let k = 0; k < text.length; k++) {
@@ -75,8 +75,7 @@ const TypeGame = () => {
         
         if(test==text.length && test > 0){
             console.log("you win, your time is", + gameTime );
-            setGameTime(0)
-            setGameRunning(false)
+            clearInterval(interval.current)
         }
         setText(editData)
 
@@ -97,14 +96,16 @@ const TypeGame = () => {
         setText(sumData)
     },[])
 
-    
-
+  
 
     return (
         <div className={classes.test}>
+            <div className={classes.header}>
+
+            <span className={classes.smaltext}>Your Record: 0</span>
             <div className={classes.score}>{gameTime}</div>
+            </div>
             <span style={{color:"white"}}>
-          
            {/* {JSON.stringify(text)} */}
             </span>
             <div className={classes.typeContainer}>

@@ -56,3 +56,16 @@
     color: red;
     text-decoration: underline;
 }
+
+.smaltext {
+    color: yellow;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
