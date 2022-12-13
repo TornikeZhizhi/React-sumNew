@@ -15,7 +15,7 @@ const TypeGame = () => {
 
     const [textareaText, setTextAreaText] = useState()
 
-    const [gameRunning, setGameRunning] = useState(false);
+    const [record, setRecord] = useState(0);
 
     const [gameTime, setGameTime] = useState(0)
     
@@ -38,8 +38,23 @@ const TypeGame = () => {
     useEffect(()=>{
 
         startTimer()
-    },[])
+    },[interval])
   
+
+    const resetGame=()=>{
+        setTextAreaText("")
+        startTimer()
+        setRecord(prevRecord=>{
+            if(prevRecord ==0){
+                return gameTime
+            }
+            else if(gameTime < prevRecord){
+                return gameTime
+            }else {
+                return prevRecord
+            }
+        })
+    }   
 
     useEffect(()=>{
         // let updatedArray = text
@@ -74,8 +89,13 @@ const TypeGame = () => {
         })
         
         if(test==text.length && test > 0){
-            console.log("you win, your time is", + gameTime );
             clearInterval(interval.current)
+            setGameTime(0)
+
+            setTimeout(function(){
+
+                resetGame()
+            },2000)
         }
         setText(editData)
 
@@ -102,7 +122,7 @@ const TypeGame = () => {
         <div className={classes.test}>
             <div className={classes.header}>
 
-            <span className={classes.smaltext}>Your Record: 0</span>
+            <span className={classes.smaltext}>Your Record: {record}</span>
             <div className={classes.score}>{gameTime}</div>
             </div>
             <span style={{color:"white"}}>
@@ -119,7 +139,7 @@ const TypeGame = () => {
 
                     })}
                 </div>
-                <textarea className={classes.textare} onChange={textareaHandler}></textarea>
+                <textarea className={classes.textare} value={textareaText} onChange={textareaHandler}></textarea>
 
             </div>
         </div>
