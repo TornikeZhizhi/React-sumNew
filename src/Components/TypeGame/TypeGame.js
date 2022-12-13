@@ -12,35 +12,25 @@ const TypeGame = () => {
 
     const typeText = "Prepared by experienced English teachers, the texts, articles and conversations are brief and appropriate to your level of proficiency."
     const [text, setText ] = useState([]);
-
     const [textareaText, setTextAreaText] = useState()
-
     const [record, setRecord] = useState(0);
-
     const [gameTime, setGameTime] = useState(0)
     
     const textareaHandler =(e)=> {
         setTextAreaText(e.target.value.toLowerCase());
-
     } 
 
     let interval = useRef()
     const startTimer = ()=> {
-
         interval.current = setInterval(() => {
             setGameTime(prev=>prev + 1)
         }, 1000);
-  
     }
   
-   
-
     useEffect(()=>{
-
         startTimer()
     },[interval])
   
-
     const resetGame=()=>{
         setTextAreaText("")
         startTimer()
@@ -71,13 +61,13 @@ const TypeGame = () => {
         // setText(updatedArray)
         
         
-        let test = 0;
+        let greenCounter = 0;
         const editData = text.map((data,index)=>{  
             if(index >= textareaText.length){
                 return  {...data,active:"black"}  
             }
             if(data.letter == textareaText[index]) {
-                test++;
+                greenCounter++;
                 return  {...data,active:"green"};
             }
             else if((textareaText.length -1 ) == index){
@@ -88,20 +78,17 @@ const TypeGame = () => {
             }  
         })
         
-        if(test==text.length && test > 0){
+        if(greenCounter==text.length && greenCounter > 0){
             clearInterval(interval.current)
             setGameTime(0)
 
             setTimeout(function(){
-
                 resetGame()
-            },2000)
+            },1000)
         }
         setText(editData)
 
     },[textareaText])
-
-
 
     // useEffect(()=>{
     //     console.log("gamoidaxaa")
@@ -119,7 +106,7 @@ const TypeGame = () => {
   
 
     return (
-        <div className={classes.test}>
+        <div className={classes.maincontainer}>
             <div className={classes.header}>
 
             <span className={classes.smaltext}>Your Record: {record}</span>
