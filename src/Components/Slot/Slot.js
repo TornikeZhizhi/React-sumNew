@@ -25,17 +25,17 @@ const [gameRunnig, setGameRunning] = useState(false)
 
 let slotAnimation2 = false;
 let slotAnimation3 = false;
-let winningNumber = 1
+let winningNumber = [2,3,4]
 let section = 3
 
 let transfortValue = 2680;
 
-const  keyframeAnimation =(section,winningNumber,winningNumber2,winningNumber3)=> {
+const  keyframeAnimation =(section,winningNumber)=> {
 
   
-    let inRotation = transfortValue - (winningNumber * 100);
-    let inRotation2 = transfortValue - (winningNumber2 * 100);
-    let inRotation3 = transfortValue - (winningNumber3 * 100);
+    let inRotation = transfortValue - (winningNumber[0] * 100);
+    let inRotation2 = transfortValue - (winningNumber[1] * 100);
+    let inRotation3 = transfortValue - (winningNumber[2] * 100);
     const CSSTemplate = `
         @keyframes spinning {
         from { transform: translateY(-20px); }
@@ -62,7 +62,9 @@ const  keyframeAnimation =(section,winningNumber,winningNumber2,winningNumber3)=
 }
 
 const resetFunction = (section)=>{
-  
+  setInitialSpinRotation1(-20)
+  setInitialSpinRotation2(-20)
+  setInitialSpinRotation3(-20)
 }
 
 const addActiveClass = (section) => {
@@ -70,9 +72,14 @@ const addActiveClass = (section) => {
 }
 
 const firtSlotAnimeEnD = ()=>{
-
-
-
+  setInitialSpinRotation1(transfortValue - (winningNumber[0] * 100))
+  setInitialSpinRotation2(transfortValue - (winningNumber[1] * 100))
+  setInitialSpinRotation3(transfortValue - (winningNumber[2] * 100))
+  setSlotAnime(false)   
+  // initialSpinRotation1(-20)
+  setTimeout(()=>{
+    resetFunction()
+  },2000)
 }
 
 const secondSlotAnimeEnd = ()=> {
@@ -84,7 +91,7 @@ const thirdSlotAnimeEnd = ()=>{
 }
 
 const startHandler = ()=>{
-  keyframeAnimation(1,2,3,4);
+  keyframeAnimation(1,winningNumber);
   setSlotAnime(true);
 }
 
