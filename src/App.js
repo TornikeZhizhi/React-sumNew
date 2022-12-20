@@ -18,6 +18,7 @@ import ShirtDraw from "./Components/ShirtDraw/ShirtDraw";
 import Shirt from "./Components/ShirtDraw/Shirt";
 import RepeatContext from "./Components/Repeat/RepeatContext/RepeatContext";
 import TypeGame from "./Components/TypeGame/TypeGame";
+import Slot from "./Components/Slot/Slot";
 
 
 // const handleDragStart = (e) => e.preventDefault();
@@ -58,6 +59,9 @@ function App() {
             </Route>
             <Route path="/wheel">
               <Wheel></Wheel>
+            </Route>
+            <Route path="/slot">
+              <Slot></Slot>
             </Route>
             <Route path="/shirt-draw" exact>
               <ShirtDraw/>

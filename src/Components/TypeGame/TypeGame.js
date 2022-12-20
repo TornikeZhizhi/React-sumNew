@@ -10,7 +10,7 @@ import classes from "./TypeGame.module.css";
 
 const TypeGame = () => {
 
-    const typeText = "Prepared by experienced English teachers, the texts, articles and conversations are brief and appropriate to your level of proficiency."
+    const typeText = "Prepared by experienced English teachers"
     const [text, setText ] = useState([]);
     const [textareaText, setTextAreaText] = useState()
     const [record, setRecord] = useState(0);
@@ -109,7 +109,7 @@ const TypeGame = () => {
         <div className={classes.maincontainer}>
             <div className={classes.header}>
 
-            <span className={classes.smaltext}>Your Record: {record}</span>
+            <span className={classes.smaltext}>Your Record: {record} Seconds</span>
             <div className={classes.score}>{gameTime}</div>
             </div>
             <span style={{color:"white"}}>

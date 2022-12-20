@@ -1,0 +1,418 @@
+.bonusGame__container {
+    background-image: url("../../Components/Slot/img/bonusgame-bg.png");
+    background-image: url("../../Components/Slot/img/bonusgame-bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 690px;
+    height: 620px;
+    padding-top: 23px;
+    margin: 100px auto;
+    position: relative;
+}
+.bonusGame__container-counter {
+    width: 250px;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    transform: translateY(-12px);
+}
+.bonusGame__container-counterAmount {
+    width: auto;
+    font-family: 'AdjaraBold';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    color: #b6c8ff;
+}
+.bonusGame__container-counterText {
+    font-family: 'AdjaraSemiBold';
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    font-size: 20px;
+}
+.slot {
+    width: 485px;
+    height: 335px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 22px;
+}
+.slot__levelOneBackground {
+    position: absolute;
+    width: 158px;
+    height: 100%;
+    left: 0.17%;
+    top: 0;
+    z-index: 3;
+    background-image: url(../../Components/Slot/img/bronze-bg.png);
+    background-size: 100% 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slot__levelTwoBackground {
+    position: absolute;
+    width: 158px;
+    height: 100%;
+    left: 33.7%;
+    top: 0;
+    z-index: 3;
+    background-image: url(../../Components/Slot/img/silver-bg.png);
+    background-size: 100% 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slot__levelThreeBackground {
+    position: absolute;
+    width: 158px;
+    height: 100%;
+    left: 67.25%;
+    top: 0;
+    z-index: 3;
+    background-image: url(../../Components/Slot/img/gold-bg.png);
+    background-size: 100% 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slot__base {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 7;
+   /* background-image: linear-gradient(to bottom, #000 -11%, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 0) 69%, #000 170%);
+    */
+    pointer-events: none;
+}
+.bonusGame__container .slot__base-winnerFrame {
+    position: absolute;
+    z-index: 8;
+    background-image: url(../../Components/Slot/img/middle-frame.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+    transition: 0.5s opacity;
+    width: 498px;
+    height: 118px;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slot__levelOne {
+    width: 158px;
+    height: 100%;
+    z-index: 5;
+    position: relative;
+}
+.slot__levelOne-blinds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    background-color: rgba(51, 51, 52, 0.6);
+    display: none;
+    left: 1%;
+}
+.slot__levelOne-anker {
+    position: absolute;
+    z-index: 6;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    transform: translateY(-20px);
+}
+.slot__levelOne-item, .slot__levelTwo-item, .slot__leveTree-item {
+    width: 158px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.7);
+}
+.slot__levelThree-item {
+    width: 158px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.7);
+}
+.slot__levelOne-itemWrapper, .slot__levelTwo-itemWrapper, .slot__levelTree-itemWrapper {
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.slot__levelOne-amount {
+    font-family: 'AdjaraBold';
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    -webkit-text-stroke: 1px #b66f4f;
+    text-shadow: 0px 0px 1px #3a1d11;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+.slot__levelOne-freespin, .slot__levelThree-freespin {
+    background-image: url(../../Components/Slot/img/freespin-bronze.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+}
+.slot__levelTwo-freespin, .slot__levelThree-ticket {
+    background-image: url(../../Components/Slot/img/freespin-bronze.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+}
+.slot__levelTwo-anker {
+    position: absolute;
+    z-index: 6;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    transform: translateY(-20px);
+}
+.slot__levelThree-anker {
+    position: absolute;
+    z-index: 6;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    transform: translateY(-20px);
+}
+.slot__levelOne-ticket, .slot__levelTwo-tickem, .slot__levelThree-ticket {
+    background-image: url(../../Components/Slot/img/ticket-bronze.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+}
+.slot__levelTwo-ticket, .slot__levelThree-ticket {
+    background-image: url(../../Components/Slot/img/ticket-bronze.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+}
+.slot__levelOne-arrow {
+    width: 50px;
+    height: 30px;
+    background-image: url(../../Components/Slot/img/arrow-bronze.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s;
+}
+.slot__levelTwo-arrow {
+    width: 50px;
+    height: 30px;
+    background-image: url(../../Components/Slot/img/arrow-bronze.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s;
+}
+.slot__levelThree-gel, .slot__levelOne-gel, .slot__levelTwo-gel {
+    background-image: url(../../Components/Slot/img/gel-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+}
+.slot__levelThree-amount, .slot__levelOne-amount, .slot__levelTwo-amount {
+    font-family: 'AdjaraBold';
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    -webkit-text-stroke: 1px #ca9240;
+    text-shadow: 0px 0px 1px #3a1d11;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+.box {
+    width: 450px;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+.box__info {
+    width: 60px;
+    height: 60px;
+    background-image: url(../../Components/Slot/img/newinfo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.box__spinButton {
+    width: 190px;
+    height: 60px;
+    background-image: url(../../Components/Slot/img/spinbutton-frame.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'AdjaraBold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    font-feature-settings: "case" on;
+    cursor: pointer;
+}
+.box__giftBox {
+    width: 60px;
+    height: 60px;
+    background-image: url(../../Components/Slot/img/newhistory-bround.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.slot__levelTwo {
+    width: 158px;
+    height: 100%;
+    z-index: 5;
+    position: relative;
+}
+.slot__levelThree {
+    width: 158px;
+    height: 100%;
+    z-index: 5;
+    position: relative;
+}
+.spinning {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: spinning;
+    animation-name: spinning;
+    -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    animation-fill-mode: forwards;
+}
+.spinning2 {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: spinning2;
+    animation-name: spinning2;
+    -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    animation-fill-mode: forwards;
+}
+.spinning3 {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: spinning3;
+    animation-name: spinning3;
+    -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    animation-fill-mode: forwards;
+}
+.box__spinButton.disable {
+    filter: grayscale(1);
+    pointer-events: none;
+}
+.box__spinButton.hide {
+    filter: brightness(0.5);
+    cursor: no-drop;
+}
+.slot__levelThree-ticket.active {
+   /* background-image: url(../img/ticketgold-active.png);
+    width: 45px;
+    height: 45px;
+    */
+    transform: scale(1.2);
+}
+.slot__levelOne-item.active > div {
+    transition: all 0.4s;
+    transform: scale(1.2);
+}
+.slot__levelTwo-item.active > div {
+    transition: all 0.4s;
+    transform: scale(1.2);
+}
+.slot__levelTree-item.active > div {
+    transition: all 0.4s;
+    transform: scale(1.2);
+}
+.slot__levelThree-itemWrapper .active > div {
+    transform: scale(1.2);
+}
+.slot__levelThree-item.active > div {
+    transition: all 0.4s;
+    transform: scale(1.2);
+}
+.SlotPopup {
+    width: 600px;
+    height: 500px;
+    border-radius: 5px;
+    background: linear-gradient(116.66deg, #40298d 0.8%, #1e3c8e 43.14%, #1c49e7 97.58%);
+    border-radius: 4px;
+    margin: 25px 0;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slot_popup_close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../../Components/Slot/img/x.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.SlotPopup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slot_pupup_text {
+    color: #fff;
+}
