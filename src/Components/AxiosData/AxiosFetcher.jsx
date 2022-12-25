@@ -9,7 +9,7 @@ const AxiosFetcher = (query)=>{
 
 
     useEffect(()=>{
-
+        setIsLoading(true)
         if(query){
            axios.get('https://jsonplaceholder.typicode.com/posts/'+query)
             .then(response=>{
