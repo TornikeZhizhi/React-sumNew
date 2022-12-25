@@ -19,6 +19,7 @@ import Shirt from "./Components/ShirtDraw/Shirt";
 import RepeatContext from "./Components/Repeat/RepeatContext/RepeatContext";
 import TypeGame from "./Components/TypeGame/TypeGame";
 import Slot from "./Components/Slot/Slot";
+import AxiosData from "./Components/AxiosData/AxiosData";
 
 
 // const handleDragStart = (e) => e.preventDefault();
@@ -62,6 +63,9 @@ function App() {
             </Route>
             <Route path="/slot">
               <Slot></Slot>
+            </Route>
+            <Route path="/axios">
+             <AxiosData></AxiosData>
             </Route>
             <Route path="/shirt-draw" exact>
               <ShirtDraw/>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import "./slot.css"; 
 
@@ -15,6 +15,8 @@ const Slot = () => {
 const [slotArray, setSlotArray] = useState(SlotData)
 const [slotAnime, setSlotAnime] = useState(false)
 
+const [autoGame, setAutoGame] = useState(3)
+const [autoGameToggler, setAutoGameToggler] = useState(false)
 
 const [initialSpinRotation1, setInitialSpinRotation1] = useState(-20);
 const [initialSpinRotation2, setInitialSpinRotation2] = useState(-20);
@@ -25,7 +27,7 @@ const [gameRunnig, setGameRunning] = useState(false)
 
 let slotAnimation2 = false;
 let slotAnimation3 = false;
-let winningNumber = [2,3,4]
+let winningNumber = [2,2,2]
 let section = 3
 
 let transfortValue = 2680;
@@ -76,10 +78,13 @@ const firtSlotAnimeEnD = ()=>{
   setInitialSpinRotation2(transfortValue - (winningNumber[1] * 100))
   setInitialSpinRotation3(transfortValue - (winningNumber[2] * 100))
   setSlotAnime(false)   
+  
+
   // initialSpinRotation1(-20)
   setTimeout(()=>{
     resetFunction()
-  },2000)
+    setAutoGame(prev=>prev - 1)
+  },1000)
 }
 
 const secondSlotAnimeEnd = ()=> {
@@ -95,6 +100,20 @@ const startHandler = ()=>{
   setSlotAnime(true);
 }
 
+useEffect(()=>{
+  if(autoGame > 0 && autoGameToggler){
+    autostartHandler()
+  }else {
+    setAutoGameToggler(false)
+  }
+  
+},[autoGame])
+
+const autostartHandler = ()=>{
+  keyframeAnimation(1,winningNumber);
+  setSlotAnime(true);
+  setAutoGameToggler(true)
+}
 
     return (
         <div className="bonusGame__container">
@@ -160,6 +179,8 @@ const startHandler = ()=>{
           <div className="box">
             <div className="box__info"></div>
             <div className="box__spinButton" onClick={startHandler}>SPIN</div>
+            <div className="box__spinButton" onClick={autostartHandler}>Auto</div>
+
             <div className="box__giftBox"></div>
           </div>
         </div>

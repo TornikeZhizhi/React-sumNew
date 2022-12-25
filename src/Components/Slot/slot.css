@@ -211,7 +211,9 @@
     width: 35px;
     height: 35px;
     transition: transform 0.3s;
+
 }
+
 .slot__levelTwo-ticket, .slot__levelThree-ticket {
     background-image: url(../../Components/Slot/img/ticket-bronze.png);
     background-size: contain;
@@ -337,6 +339,7 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     animation-fill-mode: forwards;
+    animation-delay: 0.4s;
 }
 .spinning3 {
     -webkit-animation-duration: 3s;
@@ -348,6 +351,7 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     animation-fill-mode: forwards;
+    animation-delay: 0.8s;
 }
 .box__spinButton.disable {
     filter: grayscale(1);
@@ -415,4 +419,54 @@
 }
 .slot_pupup_text {
     color: #fff;
+}
+
+
+.chery {
+
+    background-image: url("../../Components/Slot/img/chery.png");
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+}
+.apple {
+        width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+
+    background-image: url("../../Components/Slot/img/apple.png");
+}
+.kurdeni {
+        width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+
+    background-image: url("../../Components/Slot/img/kurdeni.png");
+}
+.crown {
+        width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+
+    background-image: url("../../Components/Slot/img/crown.jpg");
+}
+.citrus {
+        width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+
+    background-image: url("../../Components/Slot/img/slot-machine-citrus.svg");
+}
+.watermelon {
+        width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+
+    background-image: url("../../Components/Slot/img/watermelon.png");
 }
