@@ -23,6 +23,7 @@ import AxiosData from "./Components/AxiosData/AxiosData";
 import Home from "./Components/ShoppingCard/pages/Home";
 import Store from "./Components/ShoppingCard/pages/Store";
 import About from "./Components/ShoppingCard/pages/About";
+import { ShoppingCartProvider } from "./Components/ShoppingCard/context/ShoppingCartContext";
 
 
 // const handleDragStart = (e) => e.preventDefault();
@@ -45,6 +46,7 @@ function App() {
     <div className="App">
        {/* <AliceCarousel mouseTracking    responsive={responsive} items={items} /> */}
        {/* npm i react-alice-carousel */}
+       <ShoppingCartProvider>
        <RepeatContext>
         <HeaderSwitchContext>
           <ProductsContext>
@@ -106,6 +108,7 @@ function App() {
           </ProductsContext>
         </HeaderSwitchContext>
         </RepeatContext>
+        </ShoppingCartProvider>
         
     </div>
   );
