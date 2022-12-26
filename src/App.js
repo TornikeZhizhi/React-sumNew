@@ -20,6 +20,9 @@ import RepeatContext from "./Components/Repeat/RepeatContext/RepeatContext";
 import TypeGame from "./Components/TypeGame/TypeGame";
 import Slot from "./Components/Slot/Slot";
 import AxiosData from "./Components/AxiosData/AxiosData";
+import Home from "./Components/ShoppingCard/pages/Home";
+import Store from "./Components/ShoppingCard/pages/Store";
+import About from "./Components/ShoppingCard/pages/About";
 
 
 // const handleDragStart = (e) => e.preventDefault();
@@ -63,6 +66,15 @@ function App() {
             </Route>
             <Route path="/slot">
               <Slot></Slot>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/store">
+              <Store></Store>
+            </Route>
+            <Route path="/about">
+            <About></About>
             </Route>
             <Route path="/axios">
              <AxiosData></AxiosData>

@@ -19,9 +19,9 @@ import InputHook from './InputHook';
     return (
         <div>
             
-            <div className='selectHook'>
+            <div className='selectHook' style={{padding:"50px 50px 0px"}}>
                 <div>
-                    {loading ? "loading" :  titleData?.title}
+                    {loading ? "loading..." :  titleData?.title}
                 </div>
                 <select style={{width:"300px"}} onChange={setSelectValue}>
                     <option value={1}>1</option>
@@ -31,7 +31,7 @@ import InputHook from './InputHook';
             </div>
 
             <br/>
-            <div className='inputhook'>
+            <div className='inputhook' style={{padding:"10px 50px"}}>
                 <input value={inputValue} type="text" onChange={setInputValue} />
                 <br/>
                 <span onClick={setInputClear}>{inputValue}</span>

@@ -594,3 +594,67 @@ code {
 .draw_tooltip_body {
   background-color: antiquewhite;
 }
+
+.store_box img {
+  width: 200px;
+  height: 150px;
+}
+
+.store_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.store_info h3{
+  font-weight: bold;
+}
+
+.store_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 60%;
+}
+
+.add_card {
+  background-color: #2E3D74;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.add_card_box {
+  display: flex;
+}
+
+.add_img {
+  background-color: #2E3D74;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  cursor: pointer;
+}
+
+.remove {
+  background-color: red;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 7px;
+  margin-top: 15px;
+}
