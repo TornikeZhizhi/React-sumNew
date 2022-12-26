@@ -18,9 +18,10 @@ export function ShoppingCartProvider({children}){
 
     function increaseCardQuantity(id){
         setCartItems(currItems=>{
-            if(currItems.find(item=>item.id === id) === null){
-                return [...currItems, {id, quantity:1}]
-            } else {
+            if (currItems.find(item => item.id === id) == null) {
+                return [...currItems, { id, quantity: 1 }]
+              }
+         else {
                 return currItems.map(item=>{
         
                     if(item.id === id){
