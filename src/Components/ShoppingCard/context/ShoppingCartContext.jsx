@@ -20,8 +20,7 @@ export function ShoppingCartProvider({children}){
         setCartItems(currItems=>{
             if (currItems.find(item => item.id === id) == null) {
                 return [...currItems, { id, quantity: 1 }]
-              }
-         else {
+            } else {
                 return currItems.map(item=>{
         
                     if(item.id === id){

@@ -5,12 +5,6 @@ import formatCurrency from '../utilities/formatCurrency';
 
 const StoreItem = ({name,imgUrl,price,id}) => {
 
-
-
-
-
-
-
     
 
     const {getItemQuantity,
