@@ -13,6 +13,7 @@ const {isCartOpen} = useContext(CartContext)
                 
            <ShopCartItem/> 
         {isCartOpen &&  <CartDropdown /> }  
+        
         </div>
     );
 };

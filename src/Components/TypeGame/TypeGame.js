@@ -12,7 +12,7 @@ const TypeGame = () => {
 
     const typeText = "Prepared by experienced English teachers"
     const [text, setText ] = useState([]);
-    const [textareaText, setTextAreaText] = useState()
+    const [textareaText, setTextAreaText] = useState("")
     const [record, setRecord] = useState(0);
     const [gameTime, setGameTime] = useState(0)
     
@@ -26,6 +26,32 @@ const TypeGame = () => {
             setGameTime(prev=>prev + 1)
         }, 1000);
     }
+
+    
+
+    useEffect(()=>{
+        const cartItems = [
+            { 
+                id:1,
+                quantity:2
+        
+            },
+            { 
+                id:2,
+                quantity:3
+            },
+            { 
+                id:3,
+                quantity:1
+            },
+        ]
+        const cartQuantity = cartItems.reduce((quantity,item)=>
+             item.quantity + quantity, 0
+        )
+
+
+  
+    },[])
   
     useEffect(()=>{
         startTimer()

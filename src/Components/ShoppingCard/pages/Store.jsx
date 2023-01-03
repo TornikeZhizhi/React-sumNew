@@ -7,7 +7,7 @@ const Store = () => {
             <div className='store_container'>
             {storeItems.map(item=>
              
-                <StoreItem {...item} />
+                <StoreItem {...item} key={item.id} />
                 )}
             </div>
     );
