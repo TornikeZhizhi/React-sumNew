@@ -24,6 +24,7 @@ import Home from "./Components/ShoppingCard/pages/Home";
 import Store from "./Components/ShoppingCard/pages/Store";
 import About from "./Components/ShoppingCard/pages/About";
 import { ShoppingCartProvider } from "./Components/ShoppingCard/context/ShoppingCartContext";
+import DinoMain from "./Components/Dino/DinoMain";
 
 
 // const handleDragStart = (e) => e.preventDefault();
@@ -77,6 +78,9 @@ function App() {
             </Route>
             <Route path="/about">
             <About></About>
+            </Route>
+            <Route path="/dino">
+              <DinoMain/>
             </Route>
             <Route path="/axios">
              <AxiosData></AxiosData>
