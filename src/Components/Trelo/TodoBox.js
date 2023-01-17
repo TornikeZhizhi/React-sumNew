@@ -3,14 +3,14 @@ import ResourceInputHook from '../Resources/ResourcesHook/ResourcesInputHook';
 
 
 
-const TodoBox = ({cardText,index,editHandler, removeCard}) => {
+const TodoBox = ({cardText,index,editHandler, removeCard, moveProgress,dataType}) => {
 
     const [todoValue, setTodoValue ] = ResourceInputHook(cardText)
     const [editToggler, setEditToggler] = useState(false)
 
     const onEditHandler = ()=>{
         setEditToggler(false)
-        editHandler(todoValue,index)
+        editHandler(todoValue,index,dataType)
     }
 
     const editOpenHandler = ()=>{
@@ -18,7 +18,10 @@ const TodoBox = ({cardText,index,editHandler, removeCard}) => {
     }
 
     const deletHandler =()=> {
-        removeCard(index)
+        removeCard(index,dataType)
+    }
+    const moveToProGressHandler =()=> {
+        moveProgress(index,dataType)
     }
 
     return (
@@ -26,6 +29,7 @@ const TodoBox = ({cardText,index,editHandler, removeCard}) => {
             <div className='todo_edit' onClick={()=>editOpenHandler(index)}>
                {editToggler && <ul>
                             <li onClick={deletHandler}>Delete</li>
+                            <li onClick={moveToProGressHandler}>Move To </li>
                         </ul>
                 }
             </div>
