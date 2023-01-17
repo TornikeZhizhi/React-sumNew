@@ -29,29 +29,29 @@ const TypeGame = () => {
 
     
 
-    useEffect(()=>{
-        const cartItems = [
-            { 
-                id:1,
-                quantity:2
+    // useEffect(()=>{
+    //     const cartItems = [
+    //         { 
+    //             id:1,
+    //             quantity:2
         
-            },
-            { 
-                id:2,
-                quantity:3
-            },
-            { 
-                id:3,
-                quantity:1
-            },
-        ]
-        const cartQuantity = cartItems.reduce((quantity,item)=>
-             item.quantity + quantity, 0
-        )
+    //         },
+    //         { 
+    //             id:2,
+    //             quantity:3
+    //         },
+    //         { 
+    //             id:3,
+    //             quantity:1
+    //         },
+    //     ]
+    //     const cartQuantity = cartItems.reduce((quantity,item)=>
+    //          item.quantity + quantity, 0
+    //     )
 
 
   
-    },[])
+    // },[])
   
     useEffect(()=>{
         startTimer()

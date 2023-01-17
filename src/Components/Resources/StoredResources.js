@@ -39,9 +39,9 @@ import EditInputs from "./EditInputs";
 
             <Card sx={{ minWidth: 275 }} m={2} className={classes.relative} key={data.id}>
 
-               {data.edit ? <div style={{padding:"10px"}}>
+               {data.edit ? <div style={{padding:"11px"}}>
 
-                <EditInputs 
+                <EditInputs style={{background:"red"}}
                  confirmedEditHandler={props.confirmedEditHandler}
                  name={data.name}
                   age={data.age} id={data.id}></EditInputs>

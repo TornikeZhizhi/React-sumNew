@@ -63,39 +63,22 @@ const ResourcesMain = (props) => {
     }
 
     const resourceDeleteHandler= (id)=> {
-
         const deletedData = resourceData.filter(item=>item.id !== id)
         setResourceData(deletedData)
     }
 
    const resourceEditIdeHandler =(id)=> {
-
       const editData = resourceData.map(data=>{    
-              if(data.id == id) {
-                  
-                return  {...data,edit:true}  
-              }else {
-
-                return data
-              }
-      
+          return data.id == id ?  {...data,edit:true}  : data 
       })
       setResourceData(editData)
    }
 
    const confirmedEditHandler =(newData,id)=>{
-
-    const editData = resourceData.map(data=>{
-        // if(data.id == id){
-        //   return {...data,name:newData.name, age:newData.age,edit:false}
-        // }else {
-        //   return data
-        // }
-        return data.id === id ? {...data,name:newData.name, age:newData.age,edit:false} : data
-
-    })
-    setResourceData(editData)
-
+      const editData = resourceData.map(data=>{
+          return data.id === id ? {...data,name:newData.name, age:newData.age,edit:false} : data
+      })
+      setResourceData(editData)
    }
 
 
@@ -107,7 +90,8 @@ const ResourcesMain = (props) => {
    let filterInput;
     if(resourceData.length > 0){
       
-       filterInput = <TextField onChange={filteredResouce} id="outlined-basic" label="search resouces..." variant="outlined" type="text" style={{display:"block",width:300, margin:"20px auto"}} />
+       filterInput = <TextField onChange={filteredResouce} id="outlined-basic" 
+       label="search resouces..." variant="outlined" type="text" style={{display:"block",width:300, margin:"20px auto"}} />
     }
 
 
