@@ -19,6 +19,7 @@
     "bootstrap": "^5.2.3",
     "flickity": "^3.0.0",
     "install": "^0.13.0",
+    "international-phone-input-react": "^0.1.1",
     "material-ui-color-picker": "^3.5.1",
     "npm": "^8.7.0",
     "react": "^18.2.0",

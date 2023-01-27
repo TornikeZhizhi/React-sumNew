@@ -29,7 +29,7 @@ const TodoBox = ({cardText,index,editHandler, removeCard, moveProgress,dataType}
             <div className='todo_edit' onClick={()=>editOpenHandler(index)}>
                {editToggler && <ul>
                             <li onClick={deletHandler}>Delete</li>
-                            <li onClick={moveToProGressHandler}>Move To </li>
+                            <li onClick={moveToProGressHandler}>Move To {dataType !== "todo" ? "todo" : "progress"}</li>
                         </ul>
                 }
             </div>

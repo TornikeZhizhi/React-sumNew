@@ -319,39 +319,41 @@
     position: relative;
 }
 .spinning {
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
     -webkit-animation-name: spinning;
     animation-name: spinning;
-    -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
-    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    /* -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07); */
+    animation-timing-function:ease-out;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     animation-fill-mode: forwards;
 }
 .spinning2 {
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
+    -webkit-animation-duration: 2.6s;
+    animation-duration: 2.6s;
     -webkit-animation-name: spinning2;
     animation-name: spinning2;
-    -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
-    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    /* -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07); */
+    animation-timing-function:ease-out;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     animation-fill-mode: forwards;
-    animation-delay: 0.4s;
+
 }
 .spinning3 {
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
+    -webkit-animation-duration: 2.6s;
+    animation-duration: 2.6s;
     -webkit-animation-name: spinning3;
     animation-name: spinning3;
-    -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
-    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    /* -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+    animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07); */
+    animation-timing-function:ease-out;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     animation-fill-mode: forwards;
-    animation-delay: 0.8s;
+   
 }
 .box__spinButton.disable {
     filter: grayscale(1);

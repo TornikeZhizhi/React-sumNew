@@ -146,20 +146,9 @@ const TreloMain = (props) => {
                     }
                     })}
                         
-                    {/* <div className="task_list_footer">
-                        <div className='list_add_card'>+ Add Card</div>
-                    </div> */}
+                  
                 </div>
-                {/* <div className='task_list_continer done'>
-                     <div className='todo_list_header'>
-                        <div className='todo_title'>Done</div>
-                        <div className='todo_property'>...</div>
-                    </div>
-
-                    <div className="task_list_footer">
-                        <div className='list_add_card'>+ Add Card</div>
-                    </div>
-                </div> */}
+              
         
             </div>
         </>
