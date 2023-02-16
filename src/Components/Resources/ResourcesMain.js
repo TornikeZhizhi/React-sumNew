@@ -104,20 +104,18 @@ const ResourcesMain = (props) => {
                 <Grid container spacing={1}>
                     <Box className="resource_wrapper" sx={{ width: '60%', margin:"0 auto" }}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <Tabs value={value} onChange={handleChange} 
+                        {/* <Tabs value={value} onChange={handleChange} 
                         aria-label="basic tabs example">
                             <Tab label="Add New Resources" {...a11yProps(0)} />
                             <Tab label=" Stored Resources" {...a11yProps(1)} />
-                        </Tabs>
+                        </Tabs> */}
                         </Box>
-                            {value == 0 && 
+                       
                            
                            <AddNewResources
                            resourceAddHandler={resourceAddHandler}>
                           </AddNewResources>
-                            }
-
-                            {value == 1 &&  
+                    
                       
                              <>
                              {filterInput}
@@ -128,8 +126,9 @@ const ResourcesMain = (props) => {
                             resourceEditIdeHandler={resourceEditIdeHandler}
                              resourceDeleteHandler={resourceDeleteHandler}>
                                
-                            </StoredResource></>
-                            }
+                            </StoredResource>
+                            </>
+                         
                     </Box>
                 </Grid>
             </Box>
