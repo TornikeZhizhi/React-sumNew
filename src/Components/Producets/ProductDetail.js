@@ -25,6 +25,16 @@ const Product = () => {
 
     },[])
 
+    
+    useEffect(()=>{
+
+        axios.get('https://dummyjson.com/products/')
+        .then(response=>{
+              console.log(response)
+        })
+
+    },[])
+
 
     return (
         <>

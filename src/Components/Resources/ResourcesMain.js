@@ -106,12 +106,20 @@ const ResourcesMain = (props) => {
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs value={value} onChange={handleChange} 
                         aria-label="basic tabs example">
-                            <Tab label="Stored Resources" {...a11yProps(0)} />
-                            <Tab label="Add New Resources" {...a11yProps(1)} />
+                            <Tab label="Add New Resources" {...a11yProps(0)} />
+                            <Tab label=" Stored Resources" {...a11yProps(1)} />
                         </Tabs>
                         </Box>
                             {value == 0 && 
-                            <>
+                           
+                           <AddNewResources
+                           resourceAddHandler={resourceAddHandler}>
+                          </AddNewResources>
+                            }
+
+                            {value == 1 &&  
+                      
+                             <>
                              {filterInput}
                              <StoredResource 
                             filterWord={filterName}
@@ -120,12 +128,8 @@ const ResourcesMain = (props) => {
                             resourceEditIdeHandler={resourceEditIdeHandler}
                              resourceDeleteHandler={resourceDeleteHandler}>
                                
-                            </StoredResource></>}
-
-                            {value == 1 &&  
-                            <AddNewResources
-                             resourceAddHandler={resourceAddHandler}>
-                            </AddNewResources>}
+                            </StoredResource></>
+                            }
                     </Box>
                 </Grid>
             </Box>

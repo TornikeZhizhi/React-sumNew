@@ -41,7 +41,7 @@ import TreloMain from "./Components/Trelo/TreloMain";
 //   0: { items: 1.3 },
 //   568: { items: 2 },
 //   1024: { items: 3 },
-// };
+// }; 
 
 function App() {
   return (
@@ -59,9 +59,7 @@ function App() {
             <Route path="/repeat" exact>
               <RepeatMain></RepeatMain>
             </Route>
-            <Route path="/resource" exact>
-              <ResourcesMain></ResourcesMain>
-            </Route>
+        
             <Route path="/hangman" exact>
               <HangManMain></HangManMain>
             </Route>
@@ -105,7 +103,8 @@ function App() {
               <ShopCheckout/>
             </Route>
             <Route path="/" exact>
-              <Shop></Shop>
+              {/* <Shop></Shop> */}
+              <ResourcesMain></ResourcesMain>
             </Route>
           </Switch>
           
