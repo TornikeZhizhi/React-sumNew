@@ -21,6 +21,7 @@ const Header = () => {
                     <li><NavLink activeClassName={classes.active} to="/wheel">Wheel</NavLink></li>
                     <li><NavLink activeClassName={classes.active} to="/shirt-draw">Shirt-Draw</NavLink></li>
                     <li><NavLink activeClassName={classes.active} to="/type-game">Type-Game</NavLink></li>
+                    <li><NavLink activeClassName={classes.active} to="/person-todo">Person-todo</NavLink></li>
                     {/* <li><NavLink activeClassName={classes.active} to="/slot">Slot-Game</NavLink></li> */}
                     {/* <li><NavLink activeClassName={classes.active} to="/axios">axios</NavLink></li> */}
                     {/* <li><NavLink activeClassName={classes.active} style={{color:"yellow"}} to="/store">store</NavLink></li> */}

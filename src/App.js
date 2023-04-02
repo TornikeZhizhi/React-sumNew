@@ -25,6 +25,8 @@ import Store from "./Components/ShoppingCard/pages/Store";
 import About from "./Components/ShoppingCard/pages/About";
 import { ShoppingCartProvider } from "./Components/ShoppingCard/context/ShoppingCartContext";
 import TreloMain from "./Components/Trelo/TreloMain";
+import PersonToDoList from "./Components/PersonToDoList/PersonToDoList";
+import PersonTodoContext from "./Components/PersonToDoList/PersonTodoContext/PersonTodoContext";
 
 
 
@@ -49,6 +51,7 @@ function App() {
        {/* <AliceCarousel mouseTracking    responsive={responsive} items={items} /> */}
        {/* npm i react-alice-carousel */}
        <ShoppingCartProvider>
+        <PersonTodoContext>
        <RepeatContext>
         <HeaderSwitchContext>
           <ProductsContext>
@@ -59,7 +62,9 @@ function App() {
             <Route path="/repeat" exact>
               <RepeatMain></RepeatMain>
             </Route>
-        
+            <Route path="/person-todo" exact>
+              <PersonToDoList/>
+            </Route>
             <Route path="/hangman" exact>
               <HangManMain></HangManMain>
             </Route>
@@ -112,6 +117,7 @@ function App() {
           </ProductsContext>
         </HeaderSwitchContext>
         </RepeatContext>
+        </PersonTodoContext>
         </ShoppingCartProvider>
         
     </div>
