@@ -24,7 +24,6 @@ const PersonList = () => {
                     {item.img == "" ? <img src='https://www.hallmarktour.com/img/profile-img.jpg' alt=''/> :
                     <>
                       <img src={item.img} alt=''/>
-                      <span>{item.img}</span>
                     </>
                     }
 
