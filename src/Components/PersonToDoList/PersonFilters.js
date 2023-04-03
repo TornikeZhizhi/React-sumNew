@@ -13,13 +13,15 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const PersonFilters = () => {
 
-    const [age, setAge] = useState("")
+    let ctx = useContext(PersonToDoTheme)
+
+  
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        ctx.setWord(event.target.value)
       };
 
-      let ctx = useContext(PersonToDoTheme)
+
 
     return (
         <div className='person_filters'>
@@ -30,7 +32,7 @@ const PersonFilters = () => {
                 >
                     <InputBase
                         sx={{ ml: 1, flex: 1 }}
-                        placeholder="Search Google Maps"
+                        placeholder="Search By Name"
                         inputProps={{ 'aria-label': 'search google maps' }}
                         onChange={(e)=>{
                             ctx.setSearchWord(e.target.value)
@@ -47,12 +49,11 @@ const PersonFilters = () => {
                 <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={age}
+                value={ctx.sortWord}
                 label="Age"
                 onChange={handleChange}
                 >
                 <MenuItem value={"name"}>First Name</MenuItem>
-                <MenuItem value={"lastname"}>Last Name</MenuItem>
                 <MenuItem value={"income"}>Income</MenuItem>
                 </Select>
               </FormControl>

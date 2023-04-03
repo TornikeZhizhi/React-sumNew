@@ -22,7 +22,10 @@ const PersonList = () => {
                         ctx.deleteHandler(item.uuid)
                       }}> X </span>
                     {item.img == "" ? <img src='https://www.hallmarktour.com/img/profile-img.jpg' alt=''/> :
+                    <>
                       <img src={item.img} alt=''/>
+                      <span>{item.img}</span>
+                    </>
                     }
 
                     <div className='name'>
