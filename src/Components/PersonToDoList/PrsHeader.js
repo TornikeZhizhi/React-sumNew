@@ -8,14 +8,11 @@ const PrsHeader = () => {
 
 
 
-
-
 let ctx = useContext(PersonToDoTheme)
 
 let nameRef = useRef("");
 let lastNameRef = useRef("");
 let IncomeRef = useRef("");
-
 
 
 const [imageUrl, setImageUrl] = useState("");
@@ -49,18 +46,19 @@ const saveHandler = ()=>{
     }  
    
 
-//    if(hasNumber(nameRef.current.value) 
-//    || hasNumber(lastNameRef.current.value) ){
-//         alert("put only string in name and lastname")
-
-//    }else if (nameRef.current.value.length < 1 || 
-//     lastNameRef.current.value < 1 || IncomeRef.current.value.length < 1){
-//         alert("please fill fields")
-//    }
-//    else {
+   if(hasNumber(nameRef.current.value) 
+    || hasNumber(lastNameRef.current.value) ){
+        alert("put only string in name and lastname")
+   }else if (nameRef.current.value.length < 1 || 
+            lastNameRef.current.value < 1 || IncomeRef.current.value.length < 1){
+        alert("please fill fields")
+   }else if(imageUrl == ""){
+     alert("please upload image")
+   }
+   else {
     ctx.addDataHandler(data)
     refreshInput()
-//    }
+   }
 
   
  
@@ -78,7 +76,7 @@ const saveHandler = ()=>{
                 Upload Image
                 <input onChange={fileBrowseHandler} hidden type="file" />
             </Button>
-            <Button  className="header_input_list" onClick={saveHandler}  className='button_save' variant="outlined" size='large'>
+            <Button  className="header_input_list button_save" onClick={saveHandler} variant="outlined" size='large'>
                      Save 
                 </Button>
         </div>
