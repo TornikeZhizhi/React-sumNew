@@ -71,10 +71,12 @@ const saveHandler = ()=>{
         <div className='header_inputs header_top'>
             <TextField inputRef={nameRef} className="header_input_list" label="First Name" variant="outlined" />
             <TextField inputRef={lastNameRef}  className="header_input_list" label="Last Name" variant="outlined" />
-            <TextField inputRef={IncomeRef}  className="header_input_list" label="Income" variant="outlined" />
+            <TextField inputRef={IncomeRef}   type="number" className="header_input_list" label="Income" variant="outlined" />
             <Button  className="header_input_list header_upload" variant="contained" component="label">
                 Upload Image
                 <input onChange={fileBrowseHandler} hidden type="file" />
+                {imageUrl !== "" ?<img className='com_img' src={imageUrl}/> : null }
+                
             </Button>
             <Button  className="header_input_list button_save" onClick={saveHandler} variant="outlined" size='large'>
                      Save 
