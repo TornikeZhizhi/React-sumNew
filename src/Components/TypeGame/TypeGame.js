@@ -73,20 +73,7 @@ const TypeGame = () => {
     }   
 
     useEffect(()=>{
-        // let updatedArray = text
 
-        // for (let k = 0; k < text.length; k++) {
-        //         if(text[k].letter == textareaText[k]){
-        //             updatedArray[k].active = "green"
-        //         }else if((textareaText.length -1) == k){
-        //             updatedArray[k].active = "red" 
-        //         }else {
-        //             updatedArray[k].active = "black"
-        //         }
-        // }
-        // setText(updatedArray)
-        
-        
         let greenCounter = 0;
         const editData = text.map((data,index)=>{  
             if(index >= textareaText.length){
@@ -116,10 +103,7 @@ const TypeGame = () => {
 
     },[textareaText])
 
-    // useEffect(()=>{
-    //     console.log("gamoidaxaa")
-
-    // },[text])
+  
 
     useEffect(()=>{
         let sumData = [];

@@ -27,6 +27,7 @@ import { ShoppingCartProvider } from "./Components/ShoppingCard/context/Shopping
 import TreloMain from "./Components/Trelo/TreloMain";
 import PersonToDoList from "./Components/PersonToDoList/PersonToDoList";
 import PersonTodoContext from "./Components/PersonToDoList/PersonTodoContext/PersonTodoContext";
+import ProjectTodo from "./Components/ProjectTodo/ProjectTodo";
 
 
 
@@ -82,6 +83,9 @@ function App() {
             </Route>
             <Route path="/about">
             <About></About>
+            </Route>
+            <Route path="/project-todo">
+            <ProjectTodo/>
             </Route>
             <Route path="/trelo">
               <TreloMain></TreloMain>
