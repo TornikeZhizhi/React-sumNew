@@ -27,6 +27,7 @@ import { ShoppingCartProvider } from "./Components/ShoppingCard/context/Shopping
 import TreloMain from "./Components/Trelo/TreloMain";
 import PersonToDoList from "./Components/PersonToDoList/PersonToDoList";
 import PersonTodoContext from "./Components/PersonToDoList/PersonTodoContext/PersonTodoContext";
+import { useEffect } from "react";
 
 
 
@@ -47,6 +48,9 @@ import PersonTodoContext from "./Components/PersonToDoList/PersonTodoContext/Per
 
 function App() {
   return (
+
+   
+
     <div className="App">
        {/* <AliceCarousel mouseTracking    responsive={responsive} items={items} /> */}
        {/* npm i react-alice-carousel */}
