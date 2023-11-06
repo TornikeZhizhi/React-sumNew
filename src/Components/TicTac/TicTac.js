@@ -110,7 +110,7 @@ const TicTac = ({ data }) => {
 
   useEffect(() => {
     setCurrentPage(1); // Reset current page when data or checkboxes change
-  }, [userDataList, activeChecked, inactiveChecked]);
+  }, []);
 
   return (
     <div>
