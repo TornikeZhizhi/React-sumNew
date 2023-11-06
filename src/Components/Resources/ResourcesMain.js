@@ -10,7 +10,7 @@ import StoredResource from "./StoredResources";
 import AddNewResources from "./AddNewResources";
 import TextField from "@mui/material/TextField";
 import Ptest from "../Producets/Ptest";
-import Test from "./Test";
+// import Test from "./Test";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

@@ -1,0 +1,148 @@
+.project_fluid {
+    display: flex;
+}
+
+.project_container {
+    background-color: #000;
+    border-radius: 0 10px 10px 0;
+    padding: 20px;
+    min-height: 400px;
+}
+
+.project_container * {
+    color: #fff;
+}
+
+
+.project_container button {
+    background: #3b3838;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin: 16px 0;
+    cursor: pointer;
+}
+
+.project_button_cont .save{
+    background-color: #000;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.project_button_cont .cansel{
+    background-color: transparent;
+    counter-reset: #000;
+    margin-right: 20px;
+    border: none;
+    cursor: pointer;
+    pad: 10px 20px;
+}
+
+
+
+.project_add_container,.project_inner {
+    background-color: #fff;
+    width: 500px;
+    background-color: #fff;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 50px 30px;
+    position: relative; 
+}
+.project_add_container label {
+    margin-top: 10px;
+ 
+}
+.project_add_container textarea {
+    resize: none;
+    height: 200px;
+    padding: 10px;
+    background-color: #ccc;
+}
+
+.project_add_container input {
+    border: none;
+    border-bottom: 2px solid #000;
+    background-color: #ccc;
+    height: 25px;
+}
+
+.project_button_cont {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.project_name {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 25px;
+}
+
+.project_date {
+    color: #6f6c6c;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.project_delete {
+    position: absolute;
+    top: 10px;
+    right: 70px;
+    cursor: pointer;
+    color: red;
+}
+
+.project_tasks_container {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.tasks_title {
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.project_task_list{
+    margin-top: 30px;
+    border-radius: 2px;
+    padding: 10px;
+}
+.project_task {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+.project_task span:last-child{
+    margin-left: 10px;
+}
+
+.project_list {
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #282626;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.del_p {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-weight: bold;
+    background: #fff;
+    border-radius: 5px;
+}

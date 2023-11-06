@@ -29,6 +29,7 @@ import PersonToDoList from "./Components/PersonToDoList/PersonToDoList";
 import PersonTodoContext from "./Components/PersonToDoList/PersonTodoContext/PersonTodoContext";
 import { useEffect } from "react";
 import ProjectTodo from "./Components/ProjectTodo/ProjectTodo";
+import TicTac from "./Components/TicTac/TicTac";
 
 // const handleDragStart = (e) => e.preventDefault();
 
@@ -82,6 +83,9 @@ function App() {
                     </Route>
                     <Route path="/about">
                       <About></About>
+                    </Route>
+                    <Route path="/tic-tac">
+                      <TicTac></TicTac>
                     </Route>
                     <Route path="/project-todo">
                       <ProjectTodo />
