@@ -9,10 +9,8 @@ const PersonTodoContext = (props)=> {
  const [searchWord, setSearchWord] = useState("")
  const [sortWord, setWord] = useState("")
 
- const [InputData, setInputData] = useState()
 
-
-//  const [items, setItems] = useState(['apple', 'zanana', 'orange']);
+ const [items, setItems] = useState(['apple', 'zanana', 'orange']);
 
 
     useEffect(()=>{
@@ -50,16 +48,6 @@ const PersonTodoContext = (props)=> {
      setToDoData(delData)
     }
 
-
-    const editHandler = (id)=>{
-         ToDoData.map((item)=>{
-            if(item.uuid == id){
-                setInputData(item)
-            }
-        })
-
-    }
-
 return(
     <PersonToDoTheme.Provider value={{
         ToDoData:ToDoData,
@@ -69,8 +57,6 @@ return(
         searchWord:searchWord,
         setWord:setWord,
         sortWord:sortWord,
-        editHandler:editHandler,
-        InputData:InputData
         }}>
         {props.children}
     </PersonToDoTheme.Provider>

@@ -21,9 +21,6 @@ const PersonList = () => {
                       <span className='close' onClick={()=>{
                         ctx.deleteHandler(item.uuid)
                       }}> X </span>
-                      <span className='td_edit' onClick={()=>{
-                        ctx.editHandler(item.uuid)
-                      }}>Edit</span>
                     {item.img == "" ? <img src='https://www.hallmarktour.com/img/profile-img.jpg' alt=''/> :
                     <>
                       <img src={item.img} alt=''/>

@@ -1,5 +1,5 @@
 import Header from "./BaceLayout/Header";
-import { Route, Switch, Redirect } from "react-router-dom";
+import {Route ,Switch ,Redirect} from "react-router-dom"
 import Products from "./Components/Producets/Products";
 import ProductDetail from "./Components/Producets/ProductDetail";
 import HeaderSwitchContext from "./ContextApi/HeaderSwitcherContext";
@@ -10,10 +10,10 @@ import HangManMain from "./Components/HangMan/HangManMain";
 import Wheel from "./Components/Wheel/Wheel";
 import Shop from "./shop/Shop";
 import ShopProvider from "./ContextApi/ShopContext";
-import ShopCheckout from "./shop-checkout/Shop-checkout";
+import ShopCheckout from "./shop-checkout/Shop-checkout"
 
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import ShirtDraw from "./Components/ShirtDraw/ShirtDraw";
 import Shirt from "./Components/ShirtDraw/Shirt";
 import RepeatContext from "./Components/Repeat/RepeatContext/RepeatContext";
@@ -27,9 +27,8 @@ import { ShoppingCartProvider } from "./Components/ShoppingCard/context/Shopping
 import TreloMain from "./Components/Trelo/TreloMain";
 import PersonToDoList from "./Components/PersonToDoList/PersonToDoList";
 import PersonTodoContext from "./Components/PersonToDoList/PersonTodoContext/PersonTodoContext";
-import { useEffect } from "react";
-import ProjectTodo from "./Components/ProjectTodo/ProjectTodo";
-import TicTac from "./Components/TicTac/TicTac";
+
+
 
 // const handleDragStart = (e) => e.preventDefault();
 
@@ -44,87 +43,83 @@ import TicTac from "./Components/TicTac/TicTac";
 //   0: { items: 1.3 },
 //   568: { items: 2 },
 //   1024: { items: 3 },
-// };
+// }; 
 
 function App() {
   return (
     <div className="App">
-      {/* <AliceCarousel mouseTracking    responsive={responsive} items={items} /> */}
-      {/* npm i react-alice-carousel */}
-      <ShoppingCartProvider>
+       {/* <AliceCarousel mouseTracking    responsive={responsive} items={items} /> */}
+       {/* npm i react-alice-carousel */}
+       <ShoppingCartProvider>
         <PersonTodoContext>
-          <RepeatContext>
-            <HeaderSwitchContext>
-              <ProductsContext>
-                <ShopProvider>
-                  <Header></Header>
-
-                  <Switch>
-                    <Route path="/repeat" exact>
-                      <RepeatMain></RepeatMain>
-                    </Route>
-                    <Route path="/person-todo" exact>
-                      <PersonToDoList />
-                    </Route>
-                    <Route path="/hangman" exact>
-                      <HangManMain></HangManMain>
-                    </Route>
-                    <Route path="/wheel">
-                      <Wheel></Wheel>
-                    </Route>
-                    <Route path="/slot">
-                      <Slot></Slot>
-                    </Route>
-                    <Route path="/home">
-                      <Home></Home>
-                    </Route>
-                    <Route path="/store">
-                      <Store></Store>
-                    </Route>
-                    <Route path="/about">
-                      <About></About>
-                    </Route>
-                    <Route path="/tic-tac">
-                      <TicTac></TicTac>
-                    </Route>
-                    <Route path="/project-todo">
-                      <ProjectTodo />
-                    </Route>
-                    <Route path="/trelo">
-                      <TreloMain></TreloMain>
-                    </Route>
-                    <Route path="/axios">
-                      <AxiosData></AxiosData>
-                    </Route>
-                    <Route path="/shirt-draw" exact>
-                      <ShirtDraw />
-                    </Route>
-                    <Route path="/shirt-draw/:id">
-                      <Shirt />
-                    </Route>
-                    <Route path="/products" exact>
-                      <Products></Products>
-                    </Route>
-                    <Route path="/type-Game" exact>
-                      <TypeGame />
-                    </Route>
-                    <Route path="/products/:id">
-                      <ProductDetail></ProductDetail>
-                    </Route>
-                    <Route path="/checkout" exact>
-                      <ShopCheckout />
-                    </Route>
-                    <Route path="/" exact>
-                      {/* <Shop></Shop> */}
-                      <ResourcesMain></ResourcesMain>
-                    </Route>
-                  </Switch>
-                </ShopProvider>
-              </ProductsContext>
-            </HeaderSwitchContext>
-          </RepeatContext>
+       <RepeatContext>
+        <HeaderSwitchContext>
+          <ProductsContext>
+            <ShopProvider>
+          <Header></Header>
+ 
+          <Switch>
+            <Route path="/repeat" exact>
+              <RepeatMain></RepeatMain>
+            </Route>
+            <Route path="/person-todo" exact>
+              <PersonToDoList/>
+            </Route>
+            <Route path="/hangman" exact>
+              <HangManMain></HangManMain>
+            </Route>
+            <Route path="/wheel">
+              <Wheel></Wheel>
+            </Route>
+            <Route path="/slot">
+              <Slot></Slot>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/store">
+              <Store></Store>
+            </Route>
+            <Route path="/about">
+            <About></About>
+            </Route>
+            <Route path="/trelo">
+              <TreloMain></TreloMain>
+            </Route>
+            <Route path="/axios">
+             <AxiosData></AxiosData>
+            </Route>
+            <Route path="/shirt-draw" exact>
+              <ShirtDraw/>
+            </Route>
+            <Route path="/shirt-draw/:id">
+              <Shirt/>
+            </Route>
+            <Route path="/products" exact>
+              <Products></Products>
+            </Route>
+            <Route path="/type-Game" exact>
+              <TypeGame/>
+            </Route>
+            <Route path="/products/:id">
+              <ProductDetail></ProductDetail>
+            </Route>
+            <Route path="/checkout" exact>
+              <ShopCheckout/>
+            </Route>
+            <Route path="/" exact>
+              {/* <Shop></Shop> */}
+              <ResourcesMain></ResourcesMain>
+            </Route>
+          </Switch>
+          
+          </ShopProvider>
+          </ProductsContext>
+        </HeaderSwitchContext>
+        </RepeatContext>
         </PersonTodoContext>
-      </ShoppingCartProvider>
+        </ShoppingCartProvider>
+        
     </div>
   );
 }

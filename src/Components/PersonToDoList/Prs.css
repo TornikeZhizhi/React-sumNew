@@ -168,22 +168,6 @@
     border-radius: 5px;
 }
 
-
-.td_edit {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    z-index: 1;
-    background-color: #F25022;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 18px;
-    padding: 5px 22px;
-    cursor: pointer;
-    display: none;
-}
-
-
 @media only screen and (max-width: 600px) {
     .header_inputs {
         flex-direction: column;
@@ -219,4 +203,3 @@
         padding: 0 20px;
     }
   }
-

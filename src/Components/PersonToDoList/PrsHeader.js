@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import "./Prs.css"
@@ -13,17 +13,6 @@ let ctx = useContext(PersonToDoTheme)
 let nameRef = useRef("");
 let lastNameRef = useRef("");
 let IncomeRef = useRef("");
-
-
-
-// useEffect(()=>{
-//     if(ctx.InputData){
-//         nameRef.current.value = ctx.InputData.name
-//         lastNameRef.current.value = ctx.InputData.lastName
-//         IncomeRef.current.value = ctx.InputData.income
-//         setImageUrl(ctx.InputData.img);
-//     }
-// },[ctx.InputData])
 
 
 const [imageUrl, setImageUrl] = useState("");
@@ -57,19 +46,19 @@ const saveHandler = ()=>{
     }  
    
 
-//    if(hasNumber(nameRef.current.value) 
-//     || hasNumber(lastNameRef.current.value) ){
-//         alert("put only string in name and lastname")
-//    }else if (nameRef.current.value.length < 1 || 
-//             lastNameRef.current.value < 1 || IncomeRef.current.value.length < 1){
-//         alert("please fill fields")
-//    }else if(imageUrl == ""){
-//      alert("please upload image")
-//    }
-//    else {
+   if(hasNumber(nameRef.current.value) 
+    || hasNumber(lastNameRef.current.value) ){
+        alert("put only string in name and lastname")
+   }else if (nameRef.current.value.length < 1 || 
+            lastNameRef.current.value < 1 || IncomeRef.current.value.length < 1){
+        alert("please fill fields")
+   }else if(imageUrl == ""){
+     alert("please upload image")
+   }
+   else {
     ctx.addDataHandler(data)
     refreshInput()
-//    }
+   }
 
   
  
@@ -80,7 +69,7 @@ const saveHandler = ()=>{
     return (
         <>
         <div className='header_inputs header_top'>
-            <TextField inputRef={nameRef}  className="header_input_list" label="First Name" variant="outlined" />
+            <TextField inputRef={nameRef} className="header_input_list" label="First Name" variant="outlined" />
             <TextField inputRef={lastNameRef}  className="header_input_list" label="Last Name" variant="outlined" />
             <TextField inputRef={IncomeRef}   type="number" className="header_input_list" label="Income" variant="outlined" />
             <Button  className="header_input_list header_upload" variant="contained" component="label">
