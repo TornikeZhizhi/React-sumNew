@@ -93,20 +93,26 @@ const userDataList = [
   },
 ];
 
-const TicTac = ({ data }) => {
+const TicTac = () => {
   const [activeChecked, setActiveChecked] = useState(true);
   const [inactiveChecked, setInactiveChecked] = useState(true);
+  const [maleChecked, setMaleChecked] = useState(true);
+  const [femaleChecked, setFemaleChecked] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage = 5;
 
   const filteredData = userDataList.filter((user) => {
-    if (activeChecked && inactiveChecked) {
+    if ((activeChecked && inactiveChecked) || (maleChecked && femaleChecked)) {
       return true; // Both checkboxes are checked, return all data
     } else if (activeChecked) {
       return user.status === "active";
     } else if (inactiveChecked) {
       return user.status === "inactive";
+    } else if (maleChecked) {
+      return user.gender === "Male";
+    } else if (femaleChecked) {
+      return user.gender === "Female";
     }
     return false;
   });
@@ -122,6 +128,10 @@ const TicTac = ({ data }) => {
       setActiveChecked(!activeChecked);
     } else if (checkbox === "inactive") {
       setInactiveChecked(!inactiveChecked);
+    } else if (checkbox === "male") {
+      setMaleChecked(!maleChecked);
+    } else if (checkbox === "female") {
+      setFemaleChecked(!femaleChecked);
     }
     setCurrentPage(1); // Reset current page when checkbox changes
   };
@@ -176,12 +186,29 @@ const TicTac = ({ data }) => {
           onChange={() => handleCheckboxChange("inactive")}
         />
       </label>
+      <label>
+        male
+        <input
+          type="checkbox"
+          checked={maleChecked}
+          onChange={() => handleCheckboxChange("male")}
+        />
+      </label>
+      <label>
+        female
+        <input
+          type="checkbox"
+          checked={femaleChecked}
+          onChange={() => handleCheckboxChange("female")}
+        />
+      </label>
 
       {/* User data container */}
       <div>
         {displayedData.map((user, index) => (
           <div key={index}>
-            {user.full_name}, Status: {user.status}, Points: {user.points}
+            {user.full_name}, Status: {user.status}, Points: {user.points},
+            gender {user.gender}
           </div>
         ))}
       </div>
